@@ -14,18 +14,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/>
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
+    
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="">
-    <link href="/amigosproanimal/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/amigosproanimal/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Custom CSS -->
-    <link href="/amigosproanimal/assets/css/style.css" rel="stylesheet">
+    <!-- <link href="/amigosproanimal/assets/css/style.css" rel="stylesheet"> -->
     <!-- page css -->
-    <link href="/amigosproanimal/assets/css/pages/error-pages.css" rel="stylesheet">
+
+    <?php 
+    include('pages/includes-head.php');
+    ?>
     <!-- You can change the theme colors from here -->
-    <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet">
+    <!-- <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet"> -->
 </head>
 <body>   
     
@@ -213,7 +214,7 @@ $datos_vacuna_mascota = array (
     //   print_r(putMascota($datos_mascota));
     //    print_r(putPersona($datos_persona));
     //    print_r(pushProducto($datos_producto));
-// print_r(putProducto($datos_producto));
+ print_r(putProducto($datos_producto));
 // print_r(putReporte($datos_reporte));
 // print_r(putRescate($datos_rescate));
 // print_r(putUsuario($datos_usuario));
@@ -222,6 +223,6 @@ $datos_vacuna_mascota = array (
 // deleteDomicilio(1);
 // deleteDonacion(1);
 // deleteMascota(3);
- print_r(getMascotas());
+ //print_r(getMascotas());
 
 ?>
