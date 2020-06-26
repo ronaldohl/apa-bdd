@@ -1,4 +1,4 @@
-<footer id="footer-apa" class="fixed-bottom">
+<footer id="footer-apa" class="fixed-bottom align-bottom">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-11 d-flex align-items-center">

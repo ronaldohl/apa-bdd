@@ -17,40 +17,42 @@
     <form id=form class="form" accion="nuevo-reporte.php" method='GET'>
                 <div class="form-group col-md-6">
                     <label for="inputFecha4">Fecha</label>
-                    <input type="date" class="form-control" id="inputFecha4" placeholder="Fecha de Reporte">
+                    <input type="date" name='fecha_reporte' class="form-control" id="inputFecha4" placeholder="Fecha de Reporte">
                 </div>
                 <div class="form-row">
              <div class="form-group col-md-6">
                 <label for="inputTipoReporte"><i class="fa fa-list-alt mr-2"></i> Tipo</label>
-                <select class="form-control" >
+                <select class="form-control" name="tipo_reporte">
                     <option selected>Selecciona un Tipo de Reporte...</option>
-                    <option>Maltrato</option>
-                    <option>Atropello</option>
-                    <option>Callejero</option>
-                    <option>Perdido</option>
-                    <option>Otro</option>
+                    <option value="MALTRATO">Maltrato</option>
+                    <option value="ATROPELLO">Atropello</option>
+                    <option value="CALLEJERO">Callejero</option>
+                    <option value="PERDIDO">Perdido</option>
+                    <option value="OTRO">Otro</option>
                 </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputDetalles4"><i class="fas fa-pencil-alt mr-2" id="icon"></i>Detalles Tipo</label>
-                <input type="text" class="form-control" id="inputTipo4" placeholder="     Detalles Tipo">
-                
+                <input type="text" class="form-control" id="inputTipo4" name="detalles_tipo" placeholder="     Detalles Tipo">                
             </div>
         </div>
         <div class="form-group">
-            <label for="inputDescripcion2"><i class="fas fa-info-circle" id="icon1"></i>Descripción</label>
-            <textarea class="form-control" id="inputDescricpion2" placeholder="Ingresa la Descripcion">
-            </textarea>
+            <label for="inputDescripcion2"><i class="fas fa-info-circle mr-2" id="icon1"></i>Descripción</label>
+            <textarea class="form-control" name="descripcion_reporte" id="inputDescricpion2" placeholder="Ingresa la Descripcion"></textarea>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-            <label for="inputCity"><i class="fas fa-notes-medical mr-3" id=icon3></i>Evaluación</label>
-            <input type="text" class="form-control" id="inputEvaluacion">
-            
+            <label for="evaluacion"><i class="fas fa-notes-medical mr-3" id=icon3></i>Evaluación</label>
+            <select name="evaluacion_reporte" id="evaluacion" class="form-control">
+                <option value="RESCATAR">RESCATAR</option>
+                <option value="CANALIZAR">CANALIZAR</option>
+                <option value="PENDIENTE">PENDIENTE</option>
+                <option value="OTRO">OTRO</option>
+            </select>            
         </div>
         <div class="form-group col-md-6">
               <label for="inputZip"> <i class="fas fa-clipboard-list mr-2" id="icon"></i>Detalles Evaluación</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="text" name="detalles_evaluacion" class="form-control" id="inputZip">
             </div>
         </div>
         <br>

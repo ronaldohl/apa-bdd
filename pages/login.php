@@ -24,45 +24,46 @@
     include('header.php');
     ?>  
     <br>
-    <div class="container">
+    <div class="container  bg-light-info rounded m-auto">
       <div class="row justify-content-center">
         <div class="col-xs-12 col-md-4 col-md-offset-4 rcorners1">
           <!-- Margen superior (css personalizado )-->
-          <div class="spacing-1"></div>
 
           <!-- Estructura del formulario -->
-          <fieldset>
-
-            <h1 class="lbl">BIENVENIDO</h1>
-
+          <form class="form-group">
+            <div class="form-row">
+              <div class="col text-center">
+                <h1 class="mt-5 mb-5">BIENVENIDO</h1>
+              </div>
+            </div>
             <!-- Caja de texto para usuario -->
             <label class="sr-only" for="user">Usuario</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-user"></i></div>
-              <input type="text" class="form-control" id="user" placeholder="Ingresa tu usuario">
+              <input type="text" class="form-control" id="user" name="nombre_usuario" placeholder="Ingresa tu usuario">
             </div>
 
             <!-- Div espaciador -->
             <div class="spacing-2"><br></div>
 
             <!-- Caja de texto para la clave-->
-            <label class="sr-only" for="clave">Contraseña</label>
             <div class="input-group">
+              <label class="sr-only" for="clave">Contraseña</label>
               <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-              <input type="password" autocomplete="off" class="form-control" id="clave" placeholder="Ingresa tu contraseña">
+              <input type="password" autocomplete="off" class="form-control" name="password" id="clave" placeholder="Ingresa tu contraseña">
             </div>
 
             <!-- Div espaciador -->
-            <div class="spacing-1"><br></div>
-
-            <!-- Caja de texto para la ubicacion-->
+            <div class="spacing-1"><br>
+          </div>
+          
+          <!-- Caja de texto para la ubicacion-->
+          <div class="input-group">
             <label class="sr-only" for="lugar">Ubicacion</label>
-            <div class="input-group">
               <div class="input-group-addon"><i class="fas fa-building"></i></div>
-              <select name="kind" class="form-control" required>
-               <option value="">Centro APA</option>
-               <option value="">Colonia Centro</option>
-               <option value="">Norte</option>
+              <select name="kind" class="form-control" required id="lugar">
+               <option value="CENTRO">Colonia Centro</option>
+               <option value="NORTE">Norte</option>
             </select>
             </div>
 
@@ -78,15 +79,14 @@
             <!-- Fin load -->
 
             <!-- boton #login para activar la funcion click y enviar el los datos mediante ajax -->
-            <div class="row float-right">   
+            <div class="row float-right mt-3">   
               <div class="col-xs-8 col-xs-offset-2">
-                <div class="spacing-2"><br><br></div>
-                <button type="button" class="btn btn-primary btn-block " name="button" id="login">Iniciar sesión</button>
+                <button type="submit" class="btn btn-success btn-block " name="button" id="login">Iniciar sesión</button>
               </div>
             </div>
             
 
-          </fieldset>
+        </form>
           <br><br>
         </div>
       </div>
@@ -94,8 +94,8 @@
 
     
 <?php 
-        include('footer.php');
         include('includes-body.php');
+        include('footer.php');
     ?>
 </body>
 </html>
