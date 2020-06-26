@@ -19,6 +19,7 @@
 <!-- You can change the theme colors from here -->
 <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet">
 <link href="/amigosproanimal/assets/css/pages/header-styles.css" rel="stylesheet"> 
+<link href="/amigosproanimal/assets/css/pages/footer-styles.css" rel="stylesheet"> 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/> 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

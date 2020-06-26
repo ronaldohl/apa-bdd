@@ -28,31 +28,29 @@
     <!-- You can change the theme colors from here -->
     <!-- <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet"> -->
 </head>
-<body>   
+<body> 
+    <?php
+    include('pages/header.php');
+    ?>  
     
-<div class="container mt-6">
+<div class="container ">
     <form class="form mt-6" action="/amigosproanimal/index.php" method='POST'>
         <div class="form-row mt-6">
             <div class="col mt-3">
                 <input type="date" class="form-control" name="fecha" id='fecha'>
             </div>
         </div>
-        <div class="form-row">
-            <div class="col text-right">
-                <button class="btn btn-succes" tipe="submit">Submit</button>
+        <div class="form-row mt-2 ">
+            <div class="col text-right ">
+                <button class="btn btn-success mt-6" tipe="submit">Submit</button>
             </div>
         </div>
     </form>
 </div>
-
-<script src="/amigosproanimal/assets/plugins/jquery/jquery.min.js"></script>
-
-<!-- Bootstrap tether Core JavaScript -->
-<script src="/amigosproanimal/assets/plugins/bootstrap/js/popper.min.js"></script>
-<script src="/amigosproanimal/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!--Wave Effects -->
-<script src="/amigosproanimal/assets/js/waves.js"></script>
-
+<?php 
+        include('./pages/footer.php');
+        include('./pages/includes-body.php');
+    ?>
 </body>
 </html>
 <?php
@@ -60,7 +58,7 @@ if(isset($_POST['fecha'])){
     $fecha = $_POST['fecha'];
     echo 'Fecha: ->  '. $fecha;
 }
-    require_once('./includes/crud.php');
+    // require_once('./includes/crud.php');
     require_once('./models/tables.model.php');
     $datos_adopcion = array(
         'id_adopcion' => 1,
@@ -214,7 +212,7 @@ $datos_vacuna_mascota = array (
     //   print_r(putMascota($datos_mascota));
     //    print_r(putPersona($datos_persona));
     //    print_r(pushProducto($datos_producto));
- print_r(putProducto($datos_producto));
+//  print_r(putProducto($datos_producto));
 // print_r(putReporte($datos_reporte));
 // print_r(putRescate($datos_rescate));
 // print_r(putUsuario($datos_usuario));

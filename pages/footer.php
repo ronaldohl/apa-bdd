@@ -1,8 +1,8 @@
-<footer id="footer">
+<footer id="footer-apa" class="fixed-bottom">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-11 d-flex align-items-center">
-                    <div class="direccion">
+                    <div class="direccion-apa">
                         Alvaro Obregon 441, Centro, Aguascalientes, Ags, CP 20000
                     </div>
                     <div class="credits">

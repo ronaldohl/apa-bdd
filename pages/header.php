@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <?php
-     include ('includes-head.php');
-    //  include ('error-404.php');
-    ?>
-
-<!-- <link href="/amigosproanimal/assets/css/pages/footer-styles.css" rel="stylesheet"> -->
-    <!-- <link href="/amigosproanimal/assets/css/pages/header-styles.css" rel="stylesheet"> -->
-    <title>Amigos Pro Animal</title>
-    <meta content="" name="descriptison">
-    <meta content="" name="keywords">
-
-</head>
     <!-- ======= Header ======= -->
-    <header id="header-apa" class="fixed-top header-transparent">
+    <header id="header-apa" class="header-transparent mb-auto">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-11 d-flex align-items-center">
@@ -83,10 +66,9 @@
 
         </div>
     </header>
+    <div class="mt-6"></div>
     <!-- End Header -->
 
-    <?php 
-        include('includes-body.php');
-    ?>
+    
 
 
