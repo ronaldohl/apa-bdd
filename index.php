@@ -1,10 +1,12 @@
 
 <?php
+require_once('loads.php');
     session_start();
     if(isset($_SESSION['usuario'])){
         header('Location: ./pages/home.php');
     }else{
        // header('Location: ./pages/error-404.php');
+      
     }
 
 ?>
@@ -58,8 +60,9 @@ if(isset($_POST['fecha'])){
     $fecha = $_POST['fecha'];
     echo 'Fecha: ->  '. $fecha;
 }
-    require_once('./includes/crud.php');
-    require_once('./models/tables.model.php');
+
+require  BASE_PATH .'includes/crud.php';
+    require('./models/tables.model.php');
     $datos_adopcion = array(
         'id_adopcion' => 1,
         'id_persona' => 1,
@@ -198,7 +201,7 @@ $datos_vacuna_mascota = array (
     echo 'adopcion :';
     echo $object->anotaciones;
 */  
-    print_r(postDonacion($datos_donacion));
+    // print_r(postDonacion($datos_donacion));
     // pushMascota($datos_mascota);
     // pushProducto($datos_producto);
     // pushReporte($datos_reporte);
@@ -208,7 +211,7 @@ $datos_vacuna_mascota = array (
     //  print_r(pushAdopcion($datos_adopcion));
     //  print_r(putAdopcion($datos_adopcion));
     //  print_r(putDomicilio($datos_domicilio));
-    //  print_r(putDonacion($datos_donacion));
+      print_r(putDonacion($datos_donacion));
     //   print_r(putMascota($datos_mascota));
     //    print_r(putPersona($datos_persona));
     //    print_r(pushProducto($datos_producto));

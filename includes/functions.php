@@ -1,5 +1,5 @@
 <?php
-require_once('./config/config.php');
+require(BASE_PATH .'config/config.php');
 
 date_default_timezone_set ("America/Mexico_City" );
 $HOST = $HOST;

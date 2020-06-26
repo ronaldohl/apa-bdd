@@ -1,9 +1,10 @@
 <?php
 
-require_once('./includes/conexion.php');
-require_once('./config/bd-table-names.php');
-require_once('./config/config.php');
-require_once('./includes/functions.php');
+// require('./config/config.php');
+require('../loads.php');
+require(BASE_PATH . 'includes/conexion.php');
+require(BASE_PATH . 'config/bd-table-names.php');
+require(BASE_PATH . 'includes/functions.php');
 $HOST = $HOST; 
 $mascota   = $table_mascota;
 $persona   = $table_persona;

@@ -5,7 +5,7 @@
 
 
 function conectarBD() {
-    require_once('./config/bd-config.php');
+    require BASE_PATH . '/config/bd-config.php';
     $conexion = new mysqli($server, $user, $password, $bd, $port);
     if($conexion->connect_errno){
         echo '<script>

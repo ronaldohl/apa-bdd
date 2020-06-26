@@ -24,13 +24,13 @@
     include('header.php');
     ?>  
     <br>
-    <div class="container  bg-light-info rounded m-auto">
+    <div class="container  bg-light-extra rounded m-auto">
       <div class="row justify-content-center">
         <div class="col-xs-12 col-md-4 col-md-offset-4 rcorners1">
           <!-- Margen superior (css personalizado )-->
 
           <!-- Estructura del formulario -->
-          <form class="form-group">
+          <form class="form-group" action="validar-login.php" method="POST">
             <div class="form-row">
               <div class="col text-center">
                 <h1 class="mt-5 mb-5">BIENVENIDO</h1>
@@ -40,7 +40,7 @@
             <label class="sr-only" for="user">Usuario</label>
             <div class="input-group">
               <div class="input-group-addon"><i class="fa fa-user"></i></div>
-              <input type="text" class="form-control" id="user" name="nombre_usuario" placeholder="Ingresa tu usuario">
+              <input type="text" required class="form-control" id="user" name="nombre_usuario" placeholder="Ingresa tu usuario">
             </div>
 
             <!-- Div espaciador -->
@@ -50,7 +50,7 @@
             <div class="input-group">
               <label class="sr-only" for="clave">Contraseña</label>
               <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-              <input type="password" autocomplete="off" class="form-control" name="password" id="clave" placeholder="Ingresa tu contraseña">
+              <input type="password" required autocomplete="off" class="form-control" name="password" id="clave" placeholder="Ingresa tu contraseña">
             </div>
 
             <!-- Div espaciador -->
@@ -61,7 +61,7 @@
           <div class="input-group">
             <label class="sr-only" for="lugar">Ubicacion</label>
               <div class="input-group-addon"><i class="fas fa-building"></i></div>
-              <select name="kind" class="form-control" required id="lugar">
+              <select name="centro" class="form-control" required id="lugar">
                <option value="CENTRO">Colonia Centro</option>
                <option value="NORTE">Norte</option>
             </select>

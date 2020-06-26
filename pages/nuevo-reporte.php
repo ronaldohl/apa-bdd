@@ -14,6 +14,12 @@
     ?>
 
 <div class="container m-5" >
+    <div class="row">
+        <div class="col text-left ml-3 mb-3">
+            <h3>Nuevo Reporte</h3>
+            <hr>
+        </div>
+    </div>
     <form id=form class="form" accion="nuevo-reporte.php" method='GET'>
                 <div class="form-group col-md-6">
                     <label for="inputFecha4">Fecha</label>
