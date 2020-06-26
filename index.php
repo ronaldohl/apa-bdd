@@ -58,7 +58,7 @@ if(isset($_POST['fecha'])){
     $fecha = $_POST['fecha'];
     echo 'Fecha: ->  '. $fecha;
 }
-    // require_once('./includes/crud.php');
+    require_once('./includes/crud.php');
     require_once('./models/tables.model.php');
     $datos_adopcion = array(
         'id_adopcion' => 1,
@@ -198,7 +198,7 @@ $datos_vacuna_mascota = array (
     echo 'adopcion :';
     echo $object->anotaciones;
 */  
-    //pushDonacion($datos_donacion);
+    print_r(postDonacion($datos_donacion));
     // pushMascota($datos_mascota);
     // pushProducto($datos_producto);
     // pushReporte($datos_reporte);
