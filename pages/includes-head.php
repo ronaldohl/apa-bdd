@@ -10,7 +10,7 @@
 <script src="https://kit.fontawesome.com/b96d05f45a.js" crossorigin="anonymous"></script>
 <script src="/amigosproanimal/assets/plugins/jquery/jquery.min.js"></script>
 <script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.js"></script>
-<!-- <script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.css"></script> -->
+<script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.css"></script>
 <link href="/amigosproanimal/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="/amigosproanimal/assets/css/style.css" rel="stylesheet">
@@ -25,3 +25,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
 <!-- <link href="/amigosproanimal/assets/css/pages/footer-styles.css" rel="stylesheet"> -->
+
+<!-- / Final Formulario login -->
+
+    <!-- Jquery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Js personalizado -->
+    <script src="js/operaciones.js"></script>

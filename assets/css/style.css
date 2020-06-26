@@ -83,6 +83,17 @@ Global Styles
     outline: none;
 }
 
+.rcorners1 {
+    border-radius: 25px;
+    background: #E6E6FA;
+  }
+
+.lbl {
+    color: #fd8700;
+    text-align: center;
+    font-weight: bold;
+}
+
 body {
     background: #fff;
     font-family: "Montserrat", sans-serif;
