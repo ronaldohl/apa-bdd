@@ -20,6 +20,12 @@
 <!-- page css -->
 <link href="/amigosproanimal/assets/css/pages/error-pages.css" rel="stylesheet">
 <!-- You can change the theme colors from here -->
+<!-- PARA TABLAS  -->
+<link rel="stylesheet" href="/amigosproanimal/assets/plugins/footable/css/footable.core.css">
+<link rel="stylesheet" href="/amigosproanimal/assets/plugins/bootstrap-select/bootstrap-select.min.css">
+<link rel="stylesheet" href="/amigosproanimal/assets/css/pages/footable-page.css">
+
+<!-- END PARA TABLAS -->
 <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet">
 <link href="/amigosproanimal/assets/css/pages/header-styles.css" rel="stylesheet"> 
 <link href="/amigosproanimal/assets/css/pages/footer-styles.css" rel="stylesheet"> 
