@@ -36,7 +36,7 @@
     ?>  
     
 <div class="container ">
-    <form class="form mt-6" action="/amigosproanimal/index.php" method='POST'>
+    <form class="form mt-6" action="/amigosproanimal/index.php" method='GET'>
         <div class="form-row mt-6">
             <div class="col mt-3">
                 <input type="date" class="form-control" name="fecha" id='fecha'>

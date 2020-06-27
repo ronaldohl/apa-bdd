@@ -23,7 +23,7 @@
                                     <i class="fa fa-user"></i>
                                 </div>
                             </div>
-                            <input type="text" name="nombre" class="form-control " placeholder="Nombre de Titular" required aria-required="true" pattern="[A-Za-z ]{1,100}" title="Sólo letras  Máximo 100" required="required" data-validation-required-message="Por favor ingresa tu nombre.">
+                            <input type="text" name="" class="form-control " placeholder="Nombre de Titular" required aria-required="true" pattern="[A-Za-z ]{1,100}" title="Sólo letras  Máximo 100" required="required" data-validation-required-message="Por favor ingresa tu nombre.">
                         </div>
                     </div>
                     <label class="form-label mt-2">Apellidos:</label>
