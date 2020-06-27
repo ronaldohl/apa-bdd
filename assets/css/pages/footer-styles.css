@@ -16,10 +16,14 @@
 --------------------------------------------------------------*/
 
 #footer-apa {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     background: #000;
     padding: 0 0 0px 0;
     color: #eee;
     font-size: 14px;
+    margin-top: 50px;
 }
 
 #footer-apa i {

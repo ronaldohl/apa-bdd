@@ -50,8 +50,8 @@
     </form>
 </div>
 <?php 
-        include('./pages/footer.php');
         include('./pages/includes-body.php');
+        include('./pages/footer.php');
     ?>
 </body>
 </html>
@@ -150,7 +150,7 @@ $datos_producto = array(
 );
 $datos_reporte = array(
     'id_reporte'=>2,
-    'tipo_reporte'=>'CALLEJERP',
+    'tipo_reporte'=>'CALLEJERO',
     'descripcion_reporte'=>'PERRO CALLEJERO POR DUEÑOS NO LE DEJAN COMIDA Y ESTA ENCADENADO',
     'evaluacion_reporte'=>'RESCATAR',
     'fecha_reporte'=>'2020-06-25',
@@ -204,7 +204,7 @@ $datos_vacuna_mascota = array (
     // print_r(postDonacion($datos_donacion));
     // pushMascota($datos_mascota);
     // pushProducto($datos_producto);
-    // pushReporte($datos_reporte);
+    // postReporte($datos_reporte);
     // pushRescate($datos_rescate);
     // pushVacunaMascota($datos_vacuna_mascota);
     //  print_r(postUsuario($datos_usuario));

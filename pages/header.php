@@ -1,6 +1,6 @@
 
     <!-- ======= Header ======= -->
-    <header id="header-apa" class="header-transparent mb-auto">
+    <header id="header-apa" class="header-transparent mb-3">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-11 d-flex align-items-center">
@@ -20,25 +20,25 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="/amigosproanimal/pages/personas.php">
                                 <i class="fas fa-user-friends fa-2x"></i>
                                 <h6 class="titulo-header mt-3">PERSONAS</h6>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="/amigosproanimal/pages/mascotas.php">
                                 <i class="fas fa-paw fa-2x"></i>
                                 <h6 class="titulo-header mt-3">MASCOTAS</h6>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="/amigosproanimal/pages/inventario.php">
                                 <i class="fas fa-box-open fa-2x"></i>
                                 <h6 class="titulo-header mt-3">INVENTARIO</h6>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="/amigosproanimal/pages/donaciones.php">
                                 <i class="fas fa-hand-holding-usd fa-2x"></i>
                                 <h6 class="titulo-header mt-3">DONACIONES</h6>
                                 </a>
@@ -66,7 +66,7 @@
 
         </div>
     </header>
-    <div class="mt-6"></div>
+    <div class="mb-3"></div>
     <!-- End Header -->
 
     
