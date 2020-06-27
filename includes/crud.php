@@ -1,11 +1,13 @@
 <?php
 
 // require('./config/config.php');
-require('../loads.php');
-require(BASE_PATH . 'includes/conexion.php');
-require(BASE_PATH . 'config/bd-table-names.php');
-require(BASE_PATH . 'includes/functions.php');
-$HOST = $HOST; 
+// require('C:\wamp64\www\amigosproanimal\loads.php');
+// require(BASE_PATH . 'includes/conexion.php');
+// require(BASE_PATH . 'config/bd-table-names.php');
+// require(BASE_PATH . 'includes/functions.php');
+ 
+$ruta_write = ruta_file_write;
+$ruta_read = ruta_file_read;
 $mascota   = $table_mascota;
 $persona   = $table_persona;
 $rescate   = $table_rescate;
@@ -22,7 +24,9 @@ $unlock_tables = 'UNLOCK TABLES';
 /*****************GET ************** */
 function getMascotas (){
         global $mascota;    
-        global $HOST;           
+        global $HOST;
+        global $ruta_read;           
+        global $ruta_write;           
         $sql = "SELECT * FROM $mascota WHERE activo = '1' ";
         global $conexionbd;
         $res =   $conexionbd->query($sql);
@@ -33,7 +37,7 @@ function getMascotas (){
                 $datos[$i] = ($row);
                 $i++;
             }
-            write_file('./files/readbd.log', "R $mascota ROW $i ");                
+            write_file($ruta_read, "R $mascota ROW $i ");
         }else{
             echo '<script>
             swal({   
@@ -67,7 +71,9 @@ function getMascotas (){
 };
 
 function getAdopciones (){
-    global $adopcion;    
+    global $adopcion;  
+    global $ruta_read;
+    global $ruta_write;  
     global $HOST;           
     $sql = "SELECT * FROM $adopcion WHERE activo = '1'";
     global $conexionbd;
@@ -79,7 +85,7 @@ function getAdopciones (){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $adopcion ROW $i ");                
+        write_file($ruta_read, "R $adopcion ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -97,7 +103,9 @@ function getAdopciones (){
 
 };
 function getDomicilios (){
-    global $domicilio;    
+    global $domicilio;
+    global $ruta_read;
+    global $ruta_write;    
     global $HOST;           
     $sql = "SELECT * FROM $domicilio WHERE activo = '1'";
     global $conexionbd;
@@ -109,7 +117,7 @@ function getDomicilios (){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $domicilio ROW $i ");                
+        write_file($ruta_read, "R $domicilio ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -128,7 +136,9 @@ function getDomicilios (){
 };
 
 function getDonaciones (){
-    global $donacion;    
+    global $donacion;
+    global $ruta_read;
+    global $ruta_write;        
     global $HOST;           
     $sql = "SELECT * FROM $donacion WHERE activo = '1'";
     global $conexionbd;
@@ -140,7 +150,7 @@ function getDonaciones (){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $donacion ROW $i ");                
+        write_file($ruta_read, "R $donacion ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -159,6 +169,8 @@ function getDonaciones (){
 };
 
 function getPersonas(){
+    global $ruta_read;
+    global $ruta_write;    
     global $persona;    
     global $HOST;           
     $sql = "SELECT * FROM $persona WHERE activo = '1'";
@@ -171,7 +183,7 @@ function getPersonas(){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $persona ROW $i ");                
+        write_file($ruta_read, "R $persona ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -190,6 +202,8 @@ function getPersonas(){
 };
 
 function getProductos(){
+    global $ruta_read;
+    global $ruta_write;    
     global $producto;    
     global $HOST;           
     $sql = "SELECT * FROM $producto WHERE activo = '1'";
@@ -202,7 +216,7 @@ function getProductos(){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $producto ROW $i ");                
+        write_file($ruta_read, "R $producto ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -221,6 +235,8 @@ function getProductos(){
 };
 
 function getReportes(){
+    global $ruta_read;
+    global $ruta_write;    
     global $reporte;    
     global $HOST;           
     $sql = "SELECT * FROM $reporte WHERE activo = '1'";
@@ -233,7 +249,7 @@ function getReportes(){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $reporte ROW $i ");                
+        write_file($ruta_read, "R $reporte ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -250,6 +266,8 @@ function getReportes(){
 
 };
 function getRescates(){
+    global $ruta_read;
+    global $ruta_write;    
     global $rescate;    
     global $HOST;           
     $sql = "SELECT * FROM $rescate WHERE activo = '1'";
@@ -262,7 +280,7 @@ function getRescates(){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $rescate ROW $i ");                
+        write_file($ruta_read, "R $rescate ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -279,6 +297,8 @@ function getRescates(){
 };
 
 function getUsuarios(){
+    global $ruta_read;
+    global $ruta_write;    
     global $usuario;    
     global $HOST;           
     $sql = "SELECT * FROM $usuario WHERE activo = '1'";
@@ -291,7 +311,7 @@ function getUsuarios(){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $usuario ROW $i ");                
+        write_file($ruta_read, "R $usuario ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -308,6 +328,8 @@ function getUsuarios(){
 };
 
 function getVacunasMascota($id_mascota){
+    global $ruta_read;
+    global $ruta_write;    
     global $vacuna_mascota;    
     global $HOST;           
     $sql = "SELECT * FROM $vacuna_mascota WHERE id_mascota = $id_mascota";
@@ -320,7 +342,7 @@ function getVacunasMascota($id_mascota){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $vacuna_mascota ROW $i ");                
+        write_file($ruta_read, "R $vacuna_mascota ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -339,6 +361,8 @@ function getVacunasMascota($id_mascota){
 };
 /*****************GET BY ID ************** */
 function getAdopcion($id_adopcion){
+    global $ruta_read;
+    global $ruta_write;    
     global $adopcion;    
     global $HOST;           
     $sql = "SELECT * FROM $adopcion WHERE id_adopcion = $id_adopcion AND activo = '1' ";
@@ -351,7 +375,7 @@ function getAdopcion($id_adopcion){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $adopcion ROW $i ");                
+        write_file($ruta_read, "R $adopcion ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -370,6 +394,8 @@ function getAdopcion($id_adopcion){
 };
 
 function getDomicilio($id_domicilio){
+    global $ruta_read;
+    global $ruta_write;    
     global $domicilio;    
     global $HOST;           
     $sql = "SELECT * FROM $domicilio WHERE id_domicilio= $id_domicilio AND activo = '1' ";
@@ -382,7 +408,7 @@ function getDomicilio($id_domicilio){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $domicilio ROW $i ");                
+        write_file($ruta_read, "R $domicilio ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -400,6 +426,8 @@ function getDomicilio($id_domicilio){
 
 };
 function getDonacion($id_donacion){
+    global $ruta_read;
+    global $ruta_write;    
     global $donacion;    
     global $HOST;           
     $sql = "SELECT * FROM $donacion WHERE id_donacion = $id_donacion AND activo = '1' ";
@@ -412,7 +440,7 @@ function getDonacion($id_donacion){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $donacion ROW $i ");                
+        write_file($ruta_read, "R $donacion ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -430,6 +458,8 @@ function getDonacion($id_donacion){
 
 };
 function getMascota($id_mascota){
+    global $ruta_read;
+    global $ruta_write;    
     global $mascota;    
     global $HOST;           
     $sql = "SELECT * FROM $mascota WHERE id_mascota = $id_mascota AND activo = '1' ";
@@ -442,7 +472,7 @@ function getMascota($id_mascota){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $mascota ROW $i ");                
+        write_file($ruta_read, "R $mascota ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -460,6 +490,8 @@ function getMascota($id_mascota){
 
 };
 function getPersona($id_persona){
+    global $ruta_read;
+    global $ruta_write;    
     global $persona;    
     global $HOST;           
     $sql = "SELECT * FROM $persona WHERE id_persona = $id_persona AND activo = '1' ";
@@ -472,7 +504,7 @@ function getPersona($id_persona){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $persona ROW $i ");                
+        write_file($ruta_read, "R $persona ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -492,6 +524,8 @@ function getPersona($id_persona){
 
 
 function getProducto($id_producto){
+    global $ruta_read;
+    global $ruta_write;    
     global $producto;    
     global $HOST;           
     $sql = "SELECT * FROM $producto WHERE id_producto = $id_producto AND activo = '1'";
@@ -504,7 +538,7 @@ function getProducto($id_producto){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $producto ROW $i ");                
+        write_file($ruta_read, "R $producto ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -523,6 +557,8 @@ function getProducto($id_producto){
 };
 
 function getReporte($id_reporte){
+    global $ruta_read;
+    global $ruta_write;    
     global $reporte;    
     global $HOST;           
     $sql = "SELECT * FROM $reporte WHERE id_reporte = $id_reporte AND activo = '1'";
@@ -535,7 +571,7 @@ function getReporte($id_reporte){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $reporte ROW $i ");                
+        write_file($ruta_read, "R $reporte ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -553,6 +589,8 @@ function getReporte($id_reporte){
 
 };
 function getRescate($id_rescate){
+    global $ruta_read;
+    global $ruta_write;    
     global $rescate;    
     global $HOST;           
     $sql = "SELECT * FROM $rescate WHERE id_rescate = $id_rescate AND activo = '1'";
@@ -565,7 +603,7 @@ function getRescate($id_rescate){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $rescate ROW $i ");                
+        write_file($ruta_read, "R $rescate ROW $i ");
     }else{
         echo '<script>
         swal({
@@ -583,8 +621,11 @@ function getRescate($id_rescate){
 
 };
 function getUsuario($id_usuario){
+    global $ruta_read;
+    global $ruta_write;    
     global $usuario;    
-    global $HOST;           
+    global $HOST;  
+    global $ruta_read;         
     $sql = "SELECT * FROM $usuario WHERE id_usuario = $id_usuario AND activo = '1'";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
@@ -595,7 +636,7 @@ function getUsuario($id_usuario){
             $datos[$i] = ($row);
             $i++;
         }
-        write_file('./files/readbd.log', "R $usuario ROW $i ");                
+        write_file($ruta_read, "R $usuario ROW $i "); 
     }else{
         echo '<script>
         swal({
@@ -617,6 +658,8 @@ function postAdopcion($datos){
     //Conexion bd
     global $conexionbd;
     global $adopcion;
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $adopcion (id_persona, id_mascota, anotaciones, tipo, centro, fecha_adopcion)
         VALUES ($datosObj->id_persona, $datosObj->id_mascota, '$datosObj->anotaciones', '$datosObj->tipo', '$datosObj->centro', '$datosObj->fecha_adopcion' ) ") ;
@@ -634,7 +677,7 @@ function postAdopcion($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $adopcion ROW 1 -"); 
+            write_file($ruta_write, "W $adopcion ROW 1 -"); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getAdopcion($id_res);
@@ -654,6 +697,8 @@ function postDomicilio($datos){
         //Conexion bd
         global $conexionbd;
         global $domicilio;
+        global $ruta_read;
+        global $ruta_write;
         $datosObj = json_decode(json_encode((object) $datos), FALSE);
             $sql = ("INSERT INTO $domicilio (calle, numero_ext, interior, colonia, cp, municipio, centro)
             VALUES ('$datosObj->calle', $datosObj->numero_ext, '$datosObj->interior', '$datosObj->colonia', $datosObj->cp, '$datosObj->municipio', '$datosObj->centro' ) ") ;
@@ -671,7 +716,7 @@ function postDomicilio($datos){
                 }).then (()=>{               
                 });
                 </script>';
-                write_file('./files/writebd.log', "R $domicilio ROW 1 "); 
+                write_file($ruta_write, "W $domicilio ROW 1 "); 
                 $id_res = $conexionbd->insert_id;
                 $conexionbd->query($unlock_tables);
                 return getDomicilio($id_res);
@@ -692,7 +737,9 @@ function postDomicilio($datos){
 function postDonacion($datos){
             //Conexion bd
             global $conexionbd;
-            global $donacion;
+            global $donacion; 
+            global $ruta_read;
+            global $ruta_write;
             $datosObj = json_decode(json_encode((object) $datos), FALSE);
                 $sql = ("INSERT INTO $donacion (centro, fecha_donacion, nombre_donante, rfc, id_domicilio, telefono, correo, tipo_donacion, monto, descripcion)
                 VALUES ('$datosObj->centro', '$datosObj->fecha_donacion', '$datosObj->nombre_donante', '$datosObj->rfc', $datosObj->id_domicilio, $datosObj->telefono, '$datosObj->correo', '$datosObj->tipo_donacion', $datosObj->monto, '$datosObj->descripcion' ) ") ;
@@ -710,7 +757,7 @@ function postDonacion($datos){
                     }).then (()=>{               
                     });
                     </script>';
-                    write_file('./files/writebd.log', "R $donacion ROW 1 "); 
+                    write_file($ruta_write, "W $donacion ROW 1 "); 
                     $id_res = $conexionbd->insert_id;
                     $conexionbd->query($unlock_tables);
                     return getDonacion($id_res);
@@ -733,7 +780,9 @@ function postDonacion($datos){
 function postMascota($datos){
     //Conexion bd
     global $conexionbd;
-    global $mascota;
+    global $mascota; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $mascota 
             (id_rescate, 
@@ -776,7 +825,7 @@ function postMascota($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $mascota ROW 1 "); 
+            write_file($ruta_write, "W $mascota ROW 1 "); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getMascota($id_res);
@@ -798,7 +847,9 @@ function postMascota($datos){
 function postPersona($datos){
     //Conexion bd
     global $conexionbd;
-    global $persona;
+    global $persona; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $persona 
             (tipo_persona, 
@@ -857,7 +908,9 @@ function postPersona($datos){
 function postProducto($datos){
     //Conexion bd
     global $conexionbd;
-    global $producto;
+    global $producto; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $producto 
             (nombre, 
@@ -887,7 +940,7 @@ function postProducto($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $producto ROW 1 "); 
+            write_file($ruta_write, "W $producto ROW 1 "); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getProducto($id_res);
@@ -909,7 +962,9 @@ function postProducto($datos){
 function postReporte($datos){
     //Conexion bd
     global $conexionbd;
-    global $reporte;
+    global $reporte; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $reporte 
             (tipo_reporte, 
@@ -939,7 +994,7 @@ function postReporte($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $reporte ROW 1 "); 
+            write_file($ruta_write, "W $reporte ROW 1 "); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getReporte($id_res);
@@ -961,7 +1016,9 @@ function postReporte($datos){
 function postRescate($datos){
     //Conexion bd
     global $conexionbd;
-    global $rescate;
+    global $rescate; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $rescate 
             (id_persona, 
@@ -990,7 +1047,7 @@ function postRescate($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $rescate ROW 1 "); 
+            write_file($ruta_write, "W $rescate ROW 1 "); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getRescate($id_res);
@@ -1012,7 +1069,9 @@ function postRescate($datos){
 function postUsuario($datos){
     //Conexion bd
     global $conexionbd;
-    global $usuario;
+    global $usuario; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $usuario 
             (nombre_usuario, 
@@ -1038,7 +1097,7 @@ function postUsuario($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $usuario ROW 1 "); 
+            write_file($ruta_write, "W $usuario ROW 1 "); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getUsuario($id_res);
@@ -1062,7 +1121,9 @@ function postUsuario($datos){
 function postVacunaMascota($datos){
     //Conexion bd
     global $conexionbd;
-    global $vacuna_mascota;
+    global $vacuna_mascota; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("INSERT INTO $vacuna_mascota 
             (id_producto, 
@@ -1089,7 +1150,7 @@ function postVacunaMascota($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $vacuna_mascota ROW 1 "); 
+            write_file($ruta_write, "W $vacuna_mascota ROW 1 "); 
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             
@@ -1112,7 +1173,9 @@ function postVacunaMascota($datos){
 function putAdopcion($datos){
     //Conexion bd
     global $conexionbd;
-    global $adopcion;
+    global $adopcion; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $adopcion SET
         id_persona =  $datosObj->id_persona,
@@ -1140,7 +1203,7 @@ function putAdopcion($datos){
                     
             });
             </script>';
-            write_file('./files/writebd.log', "R $adopcion ROW 1 -"); 
+            write_file($ruta_write, "W $adopcion ROW 1 -"); 
             $conexionbd->query($unlock_tables);
             return getAdopcion($datosObj->id_adopcion);
         }else{
@@ -1160,7 +1223,9 @@ function putAdopcion($datos){
 function putDomicilio($datos){
     //Conexion bd
     global $conexionbd;
-    global $domicilio;
+    global $domicilio; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $domicilio SET 
             calle ='$datosObj->calle', 
@@ -1186,7 +1251,7 @@ function putDomicilio($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $domicilio ROW 1 "); 
+            write_file($ruta_write, "W $domicilio ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getDomicilio($datosObj->id_domicilio);
         }else{
@@ -1207,7 +1272,9 @@ function putDomicilio($datos){
 function putDonacion($datos){
     //Conexion bd
     global $conexionbd;
-    global $donacion;
+    global $donacion; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $donacion SET
          centro  = '$datosObj->centro',
@@ -1236,7 +1303,7 @@ function putDonacion($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $donacion ROW 1 "); 
+            write_file($ruta_write, "W $donacion ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getDonacion($datosObj->id_donacion);
            
@@ -1258,7 +1325,9 @@ function putDonacion($datos){
 function putMascota($datos){
     //Conexion bd
     global $conexionbd;
-    global $mascota;
+    global $mascota; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE  $mascota SET
              id_rescate = $datosObj->id_rescate,
@@ -1289,7 +1358,7 @@ function putMascota($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $mascota ROW 1 "); 
+            write_file($ruta_write, "W $mascota ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getMascota($datosObj->id_mascota);
         }else{
@@ -1310,7 +1379,9 @@ function putMascota($datos){
 function putPersona($datos){
     //Conexion bd
     global $conexionbd;
-    global $persona;
+    global $persona; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $persona SET
              tipo_persona = '$datosObj->tipo_persona', 
@@ -1359,7 +1430,9 @@ function putPersona($datos){
 function putProducto($datos){
     //Conexion bd
     global $conexionbd;
-    global $producto;
+    global $producto; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $producto SET 
              nombre = '$datosObj->nombre', 
@@ -1383,7 +1456,7 @@ function putProducto($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $producto ROW 1 "); 
+            write_file($ruta_write, "W $producto ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getProducto($datosObj->id_producto);
         }else{
@@ -1405,7 +1478,9 @@ function putProducto($datos){
 function putReporte($datos){
     //Conexion bd
     global $conexionbd;
-    global $reporte;
+    global $reporte; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $reporte SET
              tipo_reporte ='$datosObj->tipo_reporte',
@@ -1430,7 +1505,7 @@ function putReporte($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $reporte ROW 1 "); 
+            write_file($ruta_write, "W $reporte ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getReporte($datosObj->id_reporte);
         }else{
@@ -1451,7 +1526,9 @@ function putReporte($datos){
 function putRescate($datos){
     //Conexion bd
     global $conexionbd;
-    global $rescate;
+    global $rescate; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $rescate SET
              id_persona = $datosObj->id_persona,
@@ -1474,7 +1551,7 @@ function putRescate($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $rescate ROW 1 "); 
+            write_file($ruta_write, "W $rescate ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getRescate($datosObj->id_rescate);
         }else{
@@ -1495,7 +1572,9 @@ function putRescate($datos){
 function putUsuario($datos){
     //Conexion bd
     global $conexionbd;
-    global $usuario;
+    global $usuario; 
+    global $ruta_read;
+    global $ruta_write;
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $usuario SET 
              nombre_usuario  = '$datosObj->nombre_usuario',
@@ -1517,7 +1596,7 @@ function putUsuario($datos){
             }).then (()=>{               
             });
             </script>';
-            write_file('./files/writebd.log', "R $usuario ROW 1 "); 
+            write_file($ruta_write, "W $usuario ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getUsuario($datosObj->id_usuario);                        
         }else{
@@ -1539,7 +1618,9 @@ function putUsuario($datos){
 
 function deleteAdopcion($id_adopcion){
     global $adopcion;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $adopcion SET activo = 0 WHERE id_adopcion = $id_adopcion ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1552,7 +1633,7 @@ function deleteAdopcion($id_adopcion){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $adopcion ROW 1");
+        write_file($ruta_write, "D $adopcion ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1573,7 +1654,9 @@ function deleteAdopcion($id_adopcion){
 
 function deleteDomicilio($id_domicilio){
     global $domicilio;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $domicilio SET activo = 0 WHERE id_domicilio = $id_domicilio ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1586,7 +1669,7 @@ function deleteDomicilio($id_domicilio){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $domicilio ROW 1");
+        write_file($ruta_write, "D $domicilio ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1604,7 +1687,9 @@ function deleteDomicilio($id_domicilio){
 
 function deleteDonacion($id_donacion){
     global $donacion;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $donacion SET activo = 0 WHERE id_donacion = $id_donacion ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1617,7 +1702,7 @@ function deleteDonacion($id_donacion){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $donacion ROW 1");
+        write_file($ruta_write, "D $donacion ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1635,7 +1720,9 @@ function deleteDonacion($id_donacion){
 
 function deleteMascota($id_mascota){
     global $mascota;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $mascota SET activo = 0 WHERE id_mascota = $id_mascota ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1648,7 +1735,7 @@ function deleteMascota($id_mascota){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $mascota ROW 1");
+        write_file($ruta_write, "D $mascota ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1666,7 +1753,9 @@ function deleteMascota($id_mascota){
 
 function deletePersona($id_persona){
     global $persona;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $persona SET activo = 0 WHERE id_persona = $id_persona ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1679,7 +1768,7 @@ function deletePersona($id_persona){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $persona ROW 1");
+        write_file($ruta_write, "D $persona ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1697,7 +1786,9 @@ function deletePersona($id_persona){
 
 function deleteProducto($id_producto){
     global $producto;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $producto SET activo = 0 WHERE id_producto = $id_producto ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1710,7 +1801,7 @@ function deleteProducto($id_producto){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $producto ROW 1");
+        write_file($ruta_write, "D $producto ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1729,7 +1820,9 @@ function deleteProducto($id_producto){
 
 function deleteReporte($id_reporte){
     global $reporte;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $reporte SET activo = 0 WHERE id_reporte = $id_reporte ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1742,7 +1835,7 @@ function deleteReporte($id_reporte){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $reporte ROW 1");
+        write_file($ruta_write, "D $reporte ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1760,7 +1853,9 @@ function deleteReporte($id_reporte){
 
 function deleteRescate($id_rescate){
     global $rescate;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $rescate SET activo = 0 WHERE id_rescate = $id_rescate ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1773,7 +1868,7 @@ function deleteRescate($id_rescate){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $rescate ROW 1");
+        write_file($ruta_write, "D $rescate ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1790,7 +1885,9 @@ function deleteRescate($id_rescate){
 };
 function deleteUsuario($id_usuario){
     global $usuario;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $usuario SET activo = 0 WHERE id_usuario = $id_usuario ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1803,7 +1900,7 @@ function deleteUsuario($id_usuario){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $usuario ROW 1");
+        write_file($ruta_write, "D $usuario ROW 1");
         return true;
     }else{        
         echo '<script>
@@ -1820,7 +1917,9 @@ function deleteUsuario($id_usuario){
 };
 function deleteVacunaMascota($id_vacuna_mascota){
     global $vacuna_mascota;    
-    global $HOST;
+    global $HOST; 
+    global $ruta_read;
+    global $ruta_write;
     $sql = "UPDATE $vacuna_mascota SET activo = 0 WHERE id_vacuna_mascota = $id_vacuna_mascota ";
     global $conexionbd;
      $conexionbd->query($sql);
@@ -1833,7 +1932,7 @@ function deleteVacunaMascota($id_vacuna_mascota){
             }).then (()=>{               
             });
             </script>';
-        write_file('./files/writebd.log', "D $vacuna_mascota ROW 1");
+        write_file($ruta_write, "D $vacuna_mascota ROW 1");
         return true;
     }else{        
         echo '<script>

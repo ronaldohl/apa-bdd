@@ -1,6 +1,6 @@
 
 <?php
-require_once('loads.php');
+    require_once('loads.php');
     session_start();
     if(isset($_SESSION['usuario'])){
         header('Location: ./pages/home.php');
@@ -61,8 +61,8 @@ if(isset($_POST['fecha'])){
     echo 'Fecha: ->  '. $fecha;
 }
 
-require  BASE_PATH .'includes/crud.php';
-    require('./models/tables.model.php');
+// require  BASE_PATH .'includes/crud.php';
+//     require('./models/tables.model.php');
     $datos_adopcion = array(
         'id_adopcion' => 1,
         'id_persona' => 1,
@@ -207,11 +207,11 @@ $datos_vacuna_mascota = array (
     // pushReporte($datos_reporte);
     // pushRescate($datos_rescate);
     // pushVacunaMascota($datos_vacuna_mascota);
-    // print_r(pushUsuario($datos_usuario));
+    //  print_r(postUsuario($datos_usuario));
     //  print_r(pushAdopcion($datos_adopcion));
     //  print_r(putAdopcion($datos_adopcion));
     //  print_r(putDomicilio($datos_domicilio));
-      print_r(putDonacion($datos_donacion));
+    //   print_r(putDonacion($datos_donacion));
     //   print_r(putMascota($datos_mascota));
     //    print_r(putPersona($datos_persona));
     //    print_r(pushProducto($datos_producto));

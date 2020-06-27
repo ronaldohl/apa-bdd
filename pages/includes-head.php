@@ -5,9 +5,12 @@
 <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet"> -->
 <!-- <link rel="stylesheet" href="/assets/css/"> -->
+<link rel="stylesheet" href="/amigosproanimal/assets/css/icons/font-awesome/css/font-awesome.css">
 <!-- <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/amigosproanimal/assets/css/pages/icon-page.css">
 <script src="https://kit.fontawesome.com/b96d05f45a.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<!-- <script src="https://kit.fontawesome.com/b96d05f45a.js" crossorigin="anonymous"></script> -->
 <script src="/amigosproanimal/assets/plugins/jquery/jquery.min.js"></script>
 <script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.js"></script>
 <!-- <script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.css"></script> -->
