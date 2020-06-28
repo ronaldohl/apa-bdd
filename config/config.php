@@ -1,4 +1,4 @@
 <?php
 $HOST = 'MASTER';
-//$CENTRO = 'CENTRO';
+$CENTRO = 'NA';
 

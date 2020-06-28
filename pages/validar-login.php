@@ -1,8 +1,9 @@
 <?php
     require_once('../loads.php');
-        // require("../incsludes/conexion.php");
-        // require('C:\wamp64\www\amigosproanimal\config\config.php');
-        // require_once( 'C:/wamp64/www/amigosproanimal/' . 'includes/crud.php');
+    // require("../incsludes/conexion.php");
+    // require('C:\wamp64\www\amigosproanimal\config\config.php');
+    // require_once( 'C:/wamp64/www/amigosproanimal/' . 'includes/crud.php');
+    session_start();
     if(isset ($_POST) ){
         // print_r($_POST);
         $datos = $_POST;
@@ -65,11 +66,15 @@
         $user=$res->fetch_assoc();
         if($conexionbd->affected_rows){
             $id_res = $user['id_usuario'];            
-            echo 'USER VALIDO';
-            echo 'id_ :  ' . $id_res;
+            // echo 'USER VALIDO';
+            // echo 'id_ :  ' . $id_res;
             // print_r($user);
             write_file( BASE_PATH .'files/readbd.log', "R $table_usr ROW 1 ");
-            print_r (getUsuario($id_res));                
+            $datos_usuario = getUsuario($id_res);
+             $_SESSION['usuario']=$datos_usuario['nombre_usuario'];                
+              $_SESSION['centro']=$datos_usuario['centro'];
+            
+              redirect('/amigosproanimal/index.php');                
         }else{
             echo '<script>
             swal({

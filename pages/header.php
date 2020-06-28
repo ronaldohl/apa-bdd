@@ -55,8 +55,8 @@
                         <ul>
                             <li class="drop-down"><i class="fas fa-user fa-2x"></i>
                                 <ul>
-                                    <li><a href="#">MI CUENTA</a></li>
-                                    <li><a href="#">SALIR</a></li>
+                                    <li><a href="/amigosproanimal/pages/">MI CUENTA</a></li>
+                                    <li><a href="/amigosproanimal/pages/logout.php">SALIR</a></li>
                                 </ul>
                             </li>
                         </ul>

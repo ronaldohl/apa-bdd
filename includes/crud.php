@@ -629,14 +629,10 @@ function getUsuario($id_usuario){
     $sql = "SELECT * FROM $usuario WHERE id_usuario = $id_usuario AND activo = '1'";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $usuario ROW $i "); 
+    //print_r($conexionbd);
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $usuario ROW 1 "); 
     }else{
         echo '<script>
         swal({
@@ -1834,7 +1830,8 @@ function deleteReporte($id_reporte){
                 title: "BORRADO",
                 text: "SE BORRÓ EL REPORTE !",
                 type: "info"
-            }).then (()=>{               
+            }).then (()=>{ 
+                window.location.href = ("/amigosproanimal/pages/reportes.php");   
             });
             </script>';
         write_file($ruta_write, "D $reporte ROW 1");

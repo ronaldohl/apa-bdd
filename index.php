@@ -2,9 +2,19 @@
 <?php
     require_once('loads.php');
     session_start();
-    if(isset($_SESSION['usuario'])){
-        header('Location: ./pages/home.php');
+
+    if(!isset($_SESSION['usuario'])){
+        //   echo 'NO SETEADA';
+        //   global $CENTRO;
+        //   print_r($CENTRO);
+        header('Location: ./pages/login.php');
     }else{
+        // global $CENTRO;
+        // echo 'SET';
+        // echo 'session:';
+        // print_r($_SESSION);
+        // echo 'CENTRO:';
+        // print_r($CENTRO);
        // header('Location: ./pages/error-404.php');
       
     }
@@ -51,7 +61,7 @@
 </div>
 <?php 
         include('./pages/includes-body.php');
-        include('./pages/footer.php');
+        // include('./pages/footer.php');
     ?>
 </body>
 </html>
