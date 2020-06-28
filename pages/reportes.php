@@ -62,7 +62,7 @@
                     <a class="btn btn-sm btn-info "  href="/amigosproanimal/pages/editar-reporte?id='.$reporte['id_reporte'].'"; > 
                             <i class="fa fa-edit"></i>
                     </a>
-                    <a class="btn btn-sm btn-danger "  href="/amigosproanimal/pages/borrar?id='.$reporte['id_reporte'].'"; > 
+                    <a class="btn btn-sm btn-danger "  href="/amigosproanimal/pages/borrar?dato=reporte&id='.$reporte['id_reporte'].'"; > 
                             <i class="fas fa-trash"></i>
                     </a>
                     

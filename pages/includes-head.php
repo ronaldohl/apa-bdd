@@ -14,7 +14,7 @@
 <script src="/amigosproanimal/assets/plugins/jquery/jquery.min.js"></script>
 <script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.js"></script>
 <!-- <script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert.min.css"></script> -->
-<link href="/amigosproanimal/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/amigosproanimal/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="/amigosproanimal/assets/css/style.css" rel="stylesheet">
 <!-- page css -->
@@ -29,6 +29,8 @@
 <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet">
 <link href="/amigosproanimal/assets/css/pages/header-styles.css" rel="stylesheet"> 
 <link href="/amigosproanimal/assets/css/pages/footer-styles.css" rel="stylesheet"> 
+
+<script src="/amigosproanimal/assets/plugins/sweetalert/sweetalert-dev.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/> 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

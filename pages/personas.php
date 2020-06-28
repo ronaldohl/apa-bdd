@@ -12,7 +12,7 @@
         }
     ?>
 </head>
-<body>
+<body class="mb-50">
 <?php 
     include ('header.php');
 ?>
@@ -86,6 +86,9 @@
  </div>
                         </div>
     </div>
+</div>
+<div class="container mb-5 mt-5">
+  
 </div>
 
 <?php

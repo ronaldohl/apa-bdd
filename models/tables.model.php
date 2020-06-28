@@ -121,6 +121,16 @@ $reporteModelArray = array(
     'detalles_evaluacion'=>''
 );
 
+class ReporteModelClass {
+    public $id_reporte;
+    public $tipo_reporte;
+    public $descripcion_reporte;
+    public $evaluacion_reporte;
+    public $fecha_reporte;
+    public $detalles_tipo;
+    public $centro;
+    public $detalles_evaluacion;
+};
 
 $rescateModelArray = array (
     'id_rescate'=>'',

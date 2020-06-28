@@ -86,7 +86,7 @@ Global Styles
 .rcorners1 {
     border-radius: 25px;
     background: #E6E6FA;
-  }
+}
 
 .lbl {
     color: #fd8700;
@@ -101,6 +101,7 @@ body {
     overflow-x: hidden;
     color: #67757c;
     font-weight: 300;
+    margin-bottom: 50px;
 }
 
 html {
@@ -2099,7 +2100,7 @@ ul#themecolors li a.working:before {
  Footer
 *******************/
 
-.footer {
+footer {
     bottom: 0;
     color: #67757c;
     left: 0px;

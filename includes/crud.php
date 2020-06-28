@@ -986,6 +986,7 @@ function postReporte($datos){
         $conexionbd->query($sql);
         if($conexionbd->affected_rows>=1){
             //Insert correcto
+            
             echo '<script>
             swal({
                 title: "GRACIAS",
@@ -999,6 +1000,7 @@ function postReporte($datos){
             $conexionbd->query($unlock_tables);
             return getReporte($id_res);
         }else{
+            // print_r($conexionbd->error);
             echo '<script>
             swal({
                 title: "ERROR",
