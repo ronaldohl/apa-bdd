@@ -1,7 +1,7 @@
 <?php 
 require_once('../loads.php');
       
-$datos_productos = getProductos();
+$datos_adopciones = getAdopciones();
 
 ?>
 <!DOCTYPE html>
@@ -9,11 +9,9 @@ $datos_productos = getProductos();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario</title>
+    <title>Adopciones</title>
     <?php
-        include ('includes-head.php');
-        
-        
+        include ('includes-head.php');                
     ?>
 </head>
 <body>
@@ -24,16 +22,15 @@ $datos_productos = getProductos();
     <div class="container">
     <div class="card">
  <div class="card-body">
-     <h3 class="card-title mt-2">Productos</h3>
-     <h5 class="card-subtitle">Aquí encontrarás la información sobre los productos en almacen APA</h5>
+     <h3 class="card-title mt-2">Aquí</h3>
+     <h5 class="card-subtitle">Aquí podrás ver las mascotas adoptadas o realizar una nueva donación</h5>
      <table id="demo-foo-addrow2" class="table table-bordered table-stripped table-hover toggle-circle" data-page-size="7">
          <thead>
              <tr>
-                 <th data-sort-initial="true" data-toggle="true">Nombre</th>
-                 <th>Tipo</th>
+                 <th data-sort-initial="true" data-toggle="true">Fecha</th>
                  <th data-hide="phone, tablet">Centro APA</th>
-                 <th data-hide="phone, tablet">Unidad</th>
-                 <th data-hide="phone, tablet">Cantidad</th>
+                 <th>Donante</th>
+                 <th data-hide="phone, tablet">Tipo</th>    
                  <th data-sort-ignore="true" class="min-width">Opciones</th>
              </tr>
          </thead>
@@ -41,9 +38,9 @@ $datos_productos = getProductos();
              <div class="d-flex">
                  <div class="mr-auto">
                      <div class="form-group">
-                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-producto.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nuevo Producto
+                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-donacion.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nueva Producto
                         </a>
-                         <small>Registra un nuevo Producto.</small> </div>
+                         <small>Registra un nueva Donación.</small> </div>
                  </div>
                  <div class="ml-auto">
                      <div class="form-group">
@@ -55,21 +52,20 @@ $datos_productos = getProductos();
          </div>
          <tbody>
              <?php
-             foreach ($datos_productos as $producto){
+             foreach ($datos_donaciones as $donacion){
              echo '<tr>
-                 <td>'.$producto['nombre'] .'</td>
-                 <td>'.$producto['tipo'].'</td>
-                 <td>'.$producto['unidad_medida'] .'</td>    
-                 <td>'.$producto['cantidad'] .'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$producto['centro'] .'</span> </td>
+                 <td>'.$donacion['fecha_donacion'] .'</td>
+                 <td>'.$donacion['centro'].'</td>
+                 <td>'.$donacion['nombre_donante'] .'</td>    
+                 <td class="" ><span class="label label-table label-success text-center">'.$donacion['tipo_donacion'] .'</span> </td>
                  <td class="text-center">
-                    <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-producto?id='.$producto['id_producto'] .'"; >
+                    <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-donacion?id='.$donacion['id_donacion'] .'"; >
                             <i  class="fa fa-eye"></i>
                     </a>
-                    <a class="btn btn-sm btn-info mr-1 ml-1"  href="/amigosproanimal/pages/editar-producto?id='.$producto['id_producto'] .'"; > 
+                    <a class="btn btn-sm btn-info mr-1 ml-1"  href="/amigosproanimal/pages/editar-donacion?id='.$donacion['id_donacion'] .'"; > 
                             <i class="fa fa-edit"></i>
                     </a>
-                    <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?dato=producto&id='.$producto['id_producto'] .'";>
+                    <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?dato=donacion&id='.$donacion['id_donacion'] .'";>
                             <i class="fas fa-trash"></i>
                     </a> 
                  </td>
