@@ -14,7 +14,7 @@
                         <ul>
 
                             <li>
-                                <a href="">
+                                <a href="/amigosproanimal/pages/acciones.php">
                                     <i class="fas fa-list-alt fa-2x"></i>
                                     <h6 class="titulo-header mt-3">ACCIONES</h6>
                                 </a>
