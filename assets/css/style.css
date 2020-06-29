@@ -101,7 +101,7 @@ body {
     overflow-x: hidden;
     color: #67757c;
     font-weight: 300;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 html {
@@ -627,6 +627,45 @@ html body .text-dark {
 
 html body .text-themecolor {
     color: #398bf7;
+}
+
+html body .gris-apa {
+    color: #E5E5E5;
+}
+
+
+/* header */
+
+html body .azul-apa {
+    color: #3C6877;
+}
+
+
+/* azul-oscuro algunos botones varios ...*/
+
+html body .azul-apa-dark {
+    color: #225560;
+}
+
+
+/*Es el verde del logo de apa a consideracion en uso de algunos elementos*/
+
+html body .verde-apa {
+    color: #4AA829;
+}
+
+
+/*Es el naranja del logo de apa a consideracion en uso de algunos elementos*/
+
+html body .naranja-apa {
+    color: #EC7C15;
+}
+
+
+/*Es el morado del logo de apa a consideracion en uso de algunos elementos*/
+
+html body .morado-apa {
+    color: #80388B !important;
 }
 
 

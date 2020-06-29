@@ -25,7 +25,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Amigos Proanimal</title>
     
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="">
@@ -45,23 +45,59 @@
     include('pages/header.php');
     ?>  
     
-<div class="container ">
-    <form class="form mt-6" action="/amigosproanimal/index.php" method='GET'>
-        <div class="form-row mt-6">
-            <div class="col mt-3">
-                <input type="date" class="form-control" name="fecha" id='fecha'>
+
+
+            <div class="col-md-12 mb-5">
+                <div id="carouselExampleIndicators" class="carousel slide mb-5" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="/amigosproanimal/assets/images/background/slider-apa-01.png" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B;">Bienvenido</h1>
+                                <h3 class="text-dark">Conoce las diferentes acciones que puedes realizar en el sistema de gestión APA</h3>
+                                <a href="/amigosproanimal/pages/acciones.php" class="btn btn-lg btn-primary mt-3">Ir a Acciones <i class="fa fa-arrow-circle-o-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/amigosproanimal/assets/images/background/slider-apa-02.png" alt="Second slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B;">Personas</h1>
+                                <h3 class="text-dark">Gestiona los miembros de APA como rescatistas o adoptantes</h3>
+                                <a href="/amigosproanimal/pages/personas.php" class="btn btn-lg btn-primary mt-3">Ir a Personas <i class="fa fa-arrow-circle-o-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="/amigosproanimal/assets/images/background/slider-apa-03.png" alt="Third slide">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B;">Mascotas</h1>
+                                <h3 class="text-dark">Conoce nuestras mascotas rescatadas y en adopción</h3>
+                                <a href="/amigosproanimal/pages/mascotas.php" class="btn btn-lg btn-primary mt-3">Ir a Mascotas <i class="fa fa-arrow-circle-o-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="form-row mt-2 ">
-            <div class="col text-right ">
-                <button class="btn btn-success mt-6" tipe="submit">Submit</button>
-            </div>
-        </div>
-    </form>
-</div>
+       
+
 <?php 
         include('./pages/includes-body.php');
-        // include('./pages/footer.php');
+        //  include('./pages/footer.php');
     ?>
 </body>
 </html>

@@ -564,14 +564,9 @@ function getReporte($id_reporte){
     $sql = "SELECT * FROM $reporte WHERE id_reporte = $id_reporte AND activo = '1'";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $reporte ROW $i ");
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $reporte ROW 1 "); 
     }else{
         echo '<script>
         swal({
@@ -1479,6 +1474,9 @@ function putReporte($datos){
     global $reporte; 
     global $ruta_read;
     global $ruta_write;
+    echo 'lo que recibe <pre>';
+    print_r($datos);
+    echo '</pre>';
     $datosObj = json_decode(json_encode((object) $datos), FALSE);
         $sql = ("UPDATE $reporte SET
              tipo_reporte ='$datosObj->tipo_reporte',
@@ -1488,7 +1486,7 @@ function putReporte($datos){
              detalles_tipo ='$datosObj->detalles_tipo',
              detalles_evaluacion ='$datosObj->detalles_evaluacion',                
              centro ='$datosObj->centro'                
-        WHERE id_reporte = $datosObj->id_reporte ") ;
+        WHERE id_reporte = $datosObj->id_reporte; ") ;
         global $lock_tables;
         global $unlock_tables;
         $conexionbd->query("$lock_tables $reporte WRITE");
@@ -1500,20 +1498,22 @@ function putReporte($datos){
                 title: "GRACIAS",
                 text: "SE ACTUALIZÓ EL REPORTE!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{ 
+                window.location.href = ("/amigosproanimal/pages/reportes.php");              
             });
             </script>';
             write_file($ruta_write, "W $reporte ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getReporte($datosObj->id_reporte);
         }else{
+            print_r($conexionbd->error);
             echo '<script>
             swal({
                 title: "ERROR",
                 text: "OCURRIÓ UN ERROR VOLVIENDO A INICIO!",
                 type: "error"
             }).then (()=>{
-               window.location.href = ("/amigosproanimal/index.php");
+                window.location.href = ("/amigosproanimal/index.php");
             });
                 </script>';          
             

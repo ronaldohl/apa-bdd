@@ -1,6 +1,6 @@
 
     <!-- ======= Header ======= -->
-    <header id="header-apa" class="header-transparent mb-3">
+    <header id="header-apa" class="header-transparent ">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-11 d-flex align-items-center">
@@ -66,7 +66,7 @@
 
         </div>
     </header>
-    <div class="mb-3"></div>
+    
     <!-- End Header -->
 
     
