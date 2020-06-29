@@ -1,7 +1,7 @@
 <?php 
 require_once('../loads.php');
       
-$datos_rescates = getRescates();
+$datos_productos = getProductos();
 
 ?>
 <!DOCTYPE html>
@@ -9,9 +9,11 @@ $datos_rescates = getRescates();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rescates</title>
+    <title>Inventario</title>
     <?php
-        include ('includes-head.php');                
+        include ('includes-head.php');
+        
+        
     ?>
 </head>
 <body>
@@ -20,16 +22,20 @@ $datos_rescates = getRescates();
 ?>
 <div class="container">
     <div class="container">
+        <form>
     <div class="card">
  <div class="card-body">
-     <h3 class="card-title mt-2">Rescates</h3>
-     <h5 class="card-subtitle">Aquí podrás la información sobre los rescates realizados en los centros APA</h5>
+     <h3 class="card-title mt-2">Productos</h3>
+     <h5 class="card-subtitle">Aquí encontrarás la información sobre los productos en almacen APA</h5>
      <table id="demo-foo-addrow2" class="table table-bordered table-stripped table-hover toggle-circle" data-page-size="7">
          <thead>
              <tr>
-                 <th data-sort-initial="true" data-toggle="true">Fecha</th>
+                 <th data-sort-initial="true" data-toggle="true">Seleccionar</th>
+                 <th data-sort-initial="true" data-toggle="true">Nombre</th>
+                 <th>Tipo</th>
                  <th data-hide="phone, tablet">Centro APA</th>
-                 <th>Anotaciones</th>                 
+                 <th data-hide="phone, tablet">Unidad</th>
+                 <th data-hide="phone, tablet">Cantidad</th>
                  <th data-sort-ignore="true" class="min-width">Opciones</th>
              </tr>
          </thead>
@@ -37,9 +43,9 @@ $datos_rescates = getRescates();
              <div class="d-flex">
                  <div class="mr-auto">
                      <div class="form-group">
-                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nuevo-rescate.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nuevo Rescate
+                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-producto.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nuevo Producto
                         </a>
-                         <small>Registra un nuevo Rescate APA.</small> </div>
+                         <small>Registra un nuevo Producto.</small> </div>
                  </div>
                  <div class="ml-auto">
                      <div class="form-group">
@@ -50,20 +56,27 @@ $datos_rescates = getRescates();
              </div>
          </div>
          <tbody>
+             <div class="form-check">
              <?php
-             foreach ($datos_rescates as $rescate){
-             echo '<tr>
-                 <td>'.$rescate['fecha_rescate'] .'</td>
-                 <td>'.$rescate['centro'].'</td>
-                 <td>'.$rescate['anotaciones'] .'</td>    
+             foreach ($datos_productos as $producto){
+                ?>
+                <?php
+                echo '
+                <tr>
+                 <td ><input type="radio" class="form-check-input" name="" value="" id="radioProd"><label for="radioProd">Hola</label></td>
+                 <td>'.$producto['nombre'] .'</td>
+                 <td>'.$producto['tipo'].'</td>
+                 <td>'.$producto['unidad_medida'] .'</td>    
+                 <td>'.$producto['cantidad'] .'</td>    
+                 <td class="" ><span class="label label-table label-success text-center">'.$producto['centro'] .'</span> </td>
                  <td class="text-center">
-                    <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-rescate?id='.$rescate['id_rescate'] .'"; >
+                    <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-producto?id='.$producto['id_producto'] .'"; >
                             <i  class="fa fa-eye"></i>
                     </a>
-                    <a class="btn btn-sm btn-info mr-1 ml-1"  href="/amigosproanimal/pages/editar-rescate?id='.$rescate['id_rescate'] .'"; > 
+                    <a class="btn btn-sm btn-info mr-1 ml-1"  href="/amigosproanimal/pages/editar-producto?id='.$producto['id_producto'] .'"; > 
                             <i class="fa fa-edit"></i>
                     </a>
-                    <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?dato=rescate&id='.$rescate['id_rescate'] .'";>
+                    <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?dato=producto&id='.$producto['id_producto'] .'";>
                             <i class="fas fa-trash"></i>
                     </a> 
                  </td>
@@ -71,6 +84,7 @@ $datos_rescates = getRescates();
              }
              
              ?>
+             </div>
          </tbody>
          <tfoot>
              <tr>
@@ -85,6 +99,7 @@ $datos_rescates = getRescates();
      </table>
  </div>
                         </div>
+            </form>
     </div>
 </div>
 <div class="container mb-5 mt-5">
