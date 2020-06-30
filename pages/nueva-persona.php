@@ -33,9 +33,58 @@ require_once('../loads.php');
             <hr>
         </div>
     </div>
-    <form id=form class="form" accion="nuevo-rescate.php" method='POST'>
+    <form id=form class="form" accion="nueva-persona.php" method='POST'>
     <div class="form-group mt-3 mb-3">
-                    <p class="masthead-subheading font-weight-light ">Fecha Rescate</p>
+
+    <h3 class="font-bold text-primary">Datos de la persona</h3>
+                    <p class="masthead-subheading font-weight-light ">Tipo de Persona</p>
+                    <div class="form-row  justify-content-center">
+                        <div class="input-group mb-2 text-center col-11">
+                            <div class="input-group-addon">
+                                <div class="input-group-text">
+                                    <i class="fas fa-list"></i>
+                                </div>
+                            </div>
+                            <select class="form-control" name="tipo_persona" id="zona" required>             
+                             <option value='CENTRO'>ADOPTANTE</option>;
+                            <option value='NORTE'>RESCATISTA</option>;
+                            </select>
+                        </div>
+                    </div>  
+                    <p class="masthead-subheading font-weight-light ">Nombre</p>
+                    <div class="form-row  justify-content-center">
+                        <div class="input-group mb-2 text-center col-11">
+                            <div class="input-group-addon">
+                                <div class="input-group-text">
+                                    <i class="fa fa-male"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de la persona..." required="required" data-validation-required-message="Por favor ingresa el nombre de la persona">
+                        </div>
+                    </div>
+                    <p class="masthead-subheading font-weight-light ">Apellido Paterno</p>
+                    <div class="form-row  justify-content-center">
+                        <div class="input-group mb-2 text-center col-11">
+                            <div class="input-group-addon">
+                                <div class="input-group-text">
+                                    <i class="fa fa-walking"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="apellido_paterno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido paterno..." required="required" data-validation-required-message="Por favor ingresa el apellido paterno">
+                        </div>
+                    </div>
+                    <p class="masthead-subheading font-weight-light ">Apellido Materno</p>
+                    <div class="form-row  justify-content-center">
+                        <div class="input-group mb-2 text-center col-11">
+                            <div class="input-group-addon">
+                                <div class="input-group-text">
+                                    <i class="fa fa-running"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
+                        </div>
+                    </div>
+                    <p class="masthead-subheading font-weight-light ">Fecha de Nacimiento</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -43,42 +92,44 @@ require_once('../loads.php');
                                     <i class="fa fa-calendar"></i>
                                 </div>
                             </div>
-                            <input type="date" name="fecha_rescate" class="form-control " placeholder="Fecha Rescate" required aria-required="true" required="required" data-validation-required-message="Fecha Inválida.">
+                            <input type="date" name="fecha_nacimiento" class="form-control " placeholder="Fecha Nacimiento">
                         </div>
                     </div>
-                    <label class="form-label mt-2">Rescatista Apa:</label>
+                    <p class="masthead-subheading font-weight-light ">Celular</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
                                 <div class="input-group-text">
-                                    <i class="fa fa-user"></i>
+                                    <i class="fa fa-mobile"></i>
                                 </div>
                             </div>
-                                <select class="form-control" name="id_rescatista" id="rescatista" required>             
-                                    
-                                   <option value="HOLA">HOLA</option>
-                                </select>
-
+                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
                         </div>
-                       
                     </div>
-                    
-                    <label class="form-label mt-2">Centro Apa:</label>
+                    <p class="masthead-subheading font-weight-light ">Telefono</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
                                 <div class="input-group-text">
-                                    <i class="fas fa-hotel"></i>
+                                    <i class="fa fa-phone-alt"></i>
                                 </div>
                             </div>
-                            <select class="form-control" name="centro" id="zona" required>             
-                             <option value='CENTRO'>CENTRO</option>;
-                            <option value='NORTE'>NORTE</option>;
-                            </select>
+                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
+                        </div>
+                    </div>
+                    <p class="masthead-subheading font-weight-light ">Correo</p>
+                    <div class="form-row  justify-content-center">
+                        <div class="input-group mb-2 text-center col-11">
+                            <div class="input-group-addon">
+                                <div class="input-group-text">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                            </div>
+                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
                         </div>
                     </div>
                     <hr>
-                    <h3 class="font-bold text-primary">Datos Lugar de Rescate</h3>
+                    <h3 class="font-bold text-primary">Dirección</h3>
                     <label class="form-label mt-2">Nombre de la calle:</label>
                             <div class="form-row  justify-content-center">
                                 <div class="input-group mb-2 text-center col-11">
@@ -139,75 +190,6 @@ require_once('../loads.php');
                                 <option value='JESUS MARIA'>Jesus María</option>;
                                 <option value='SAN FRANCISCO DE LOS ROMO'>San Francisco de los Romo</option>;
                             </select>
-                                </div>
-                            </div>
-                            <hr>
-                            <h3 class="font-bold text-primary">Datos Mascota Rescatada</h3>
-                            <label class="form-label mt-2">Nombre de la Mascota:</label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-paw"></i></div>
-                                    </div>
-                                    <input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de la mascota..." required="required" data-validation-required-message="Por favor ingresa el nombre de la mascota">
-                                </div>
-                            </div>
-                            <label class="form-label mt-2">Especie:</label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-bug"></i></div>
-                                    </div>
-                                    <select class="form-control" name="especie" id="especie" required="required" data-validation-required-message="Por favor selecciona una especie">             
-                                        <option value='PERRO'>Perro</option>;
-                                        <option value='GATO'>Gato</option>;
-				                        <option value='AVE'>Ave</option>;
-                                        <option value='ROEDOR'>Roedor</option>;
-				                        <option value='PEZ'>Pez</option>;
-                                        <option value='OTRO'>Otro</option>;
-                                    </select>
-                                </div>
-                            </div>
-                            <label class="form-label mt-2">Detalles Especie: <small>(Opcional)</small></label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-plus-square"></i></div>
-                                    </div>
-                                    <input type="text" name="detalles_especie" class="form-control" id="inlineFormInputGroup" placeholder="Ingresa detalles sobre la especie...">
-                            </div>
-                            </div>
-                            <label class="form-label mt-2">Fecha de Nacimiento: <small>(Aproximada)</small></label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-calendar-o"></i></div>
-                                    </div>
-                                    <input type="date" name="fecha_nac" class="form-control" id="inlineFormInputGroup" placeholder="Ingresa la fecha de nacimiento..." required="required" data-validation-required-message="Por favor ingresa la fecha de nacimiento">
-                                </div>
-                            </div>
-                             <label class="form-label mt-2">Condición del Animal al momento del Rescate:</label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-heart"></i></div>
-                                    </div>
-                                    <select class="form-control" name="condicion_rescate" id="" required="required" data-validation-required-message="Por favor selecciona una condicion de rescate" required="required" data-validation-required-message="Por favor ingresa una condicion de rescate">             
-                                        <option value='BUENA'>Buena</option>;
-                                        <option value='REGULAR'>Regular</option>;
-				                        <option value='MALA'>Mala</option>;
-                                    </select>
-                                </div>
-                            </div>
-                            <hr>
-                            <h3 class="font-bold text-primary">Anotaciones Generales de Rescate</h3>
-				<label class="form-label mt-2">Anotaciones:</label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-edit"></i></div>
-                                    </div>
-                                    <textarea type="text" name="anotaciones" class="form-control" id="inlineFormInputGroup" placeholder="Ingresa alguna anotación..."></textarea>
                                 </div>
                             </div>
 				
