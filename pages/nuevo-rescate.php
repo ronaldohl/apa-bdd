@@ -273,7 +273,7 @@ if($_POST){
     if($_POST['condicion_rescate']){$datos_mascota['condicion_rescate'] = $_POST['condicion_rescate'];}
     //if($_POST['estatus']){$datos_mascota['estatus'] = $_POST['estatus'];}
     $datos_mascota['centro'] = $centro_apa;
-    $datos_mascota['estatus'] = 'RESCATE-APA';
+    $datos_mascota['estatus'] = 'RESGUARDO-APA';
 
     //Registramos pirmero el domicilio para obtener su id
     $domicilio_registrado = postDomicilio($datos_domicilio);
