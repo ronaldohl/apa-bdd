@@ -73,7 +73,7 @@ require_once('../loads.php');
                             <input type="text" name="apellido_paterno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido paterno..." required="required" data-validation-required-message="Por favor ingresa el apellido paterno">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Apellido Materno</p>
+                    <p class="masthead-subheading font-weight-light ">Apellido Materno <small> (Opcional)</small></p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -84,7 +84,7 @@ require_once('../loads.php');
                             <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Fecha de Nacimiento</p>
+                    <p class="masthead-subheading font-weight-light ">Fecha de Nacimiento <small> (Opcional)</small></p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -95,7 +95,7 @@ require_once('../loads.php');
                             <input type="date" name="fecha_nacimiento" class="form-control " placeholder="Fecha Nacimiento">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Celular</p>
+                    <p class="masthead-subheading font-weight-light ">Celular <small> (Opcional)</small></p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -106,7 +106,7 @@ require_once('../loads.php');
                             <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Telefono celular...">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Telefono</p>
+                    <p class="masthead-subheading font-weight-light ">Telefono <small> (Opcional)</small></p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -117,7 +117,7 @@ require_once('../loads.php');
                             <input type="text" name="telefono" class="form-control" id="inlineFormInputGroup" placeholder="Telefono de casa...">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Correo</p>
+                    <p class="masthead-subheading font-weight-light ">Correo <small> (Opcional)</small> </p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
