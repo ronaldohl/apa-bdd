@@ -103,7 +103,7 @@ require_once('../loads.php');
                                     <i class="fa fa-mobile"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
+                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Telefono celular...">
                         </div>
                     </div>
                     <p class="masthead-subheading font-weight-light ">Telefono</p>
@@ -114,7 +114,7 @@ require_once('../loads.php');
                                     <i class="fa fa-phone-alt"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
+                            <input type="text" name="telefono" class="form-control" id="inlineFormInputGroup" placeholder="Telefono de casa...">
                         </div>
                     </div>
                     <p class="masthead-subheading font-weight-light ">Correo</p>
@@ -125,7 +125,7 @@ require_once('../loads.php');
                                     <i class="fa fa-envelope"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Apellido materno...">
+                            <input type="text" name="correo" class="form-control" id="inlineFormInputGroup" placeholder="ej: arturolopez@gmail.com">
                         </div>
                     </div>
                     <hr>
