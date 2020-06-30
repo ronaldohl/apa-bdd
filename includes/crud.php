@@ -368,14 +368,9 @@ function getAdopcion($id_adopcion){
     $sql = "SELECT * FROM $adopcion WHERE id_adopcion = $id_adopcion AND activo = '1' ";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $adopcion ROW $i ");
+    if(!$conexionbd->error){
+        $datos = $res->fetch_assoc();                    
+        write_file($ruta_read, "R $adopcion ROW 1 ");
     }else{
         echo '<script>
         swal({
@@ -383,7 +378,7 @@ function getAdopcion($id_adopcion){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/pages/index.php");
         });
         </script>';
     die();
@@ -411,7 +406,7 @@ function getDomicilio($id_domicilio){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/index.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
@@ -428,14 +423,9 @@ function getDonacion($id_donacion){
     $sql = "SELECT * FROM $donacion WHERE id_donacion = $id_donacion AND activo = '1' ";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $donacion ROW $i "); 
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $donacion ROW 1 "); 
     }else{
         echo '<script>
         swal({
@@ -443,7 +433,7 @@ function getDonacion($id_donacion){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
@@ -460,14 +450,9 @@ function getMascota($id_mascota){
     $sql = "SELECT * FROM $mascota WHERE id_mascota = $id_mascota AND activo = '1' ";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $mascota ROW $i ");
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $mascota ROW 1 ");
     }else{
         echo '<script>
         swal({
@@ -475,7 +460,7 @@ function getMascota($id_mascota){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
@@ -503,7 +488,7 @@ function getPersona($id_persona){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
@@ -522,14 +507,9 @@ function getProducto($id_producto){
     $sql = "SELECT * FROM $producto WHERE id_producto = $id_producto AND activo = '1'";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $producto ROW $i ");
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $producto ROW 1 ");
     }else{
         echo '<script>
         swal({
@@ -537,7 +517,7 @@ function getProducto($id_producto){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
@@ -565,7 +545,7 @@ function getReporte($id_reporte){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
@@ -582,14 +562,9 @@ function getRescate($id_rescate){
     $sql = "SELECT * FROM $rescate WHERE id_rescate = $id_rescate AND activo = '1'";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $rescate ROW $i ");
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $rescate ROW 1 ");
     }else{
         echo '<script>
         swal({
@@ -597,7 +572,7 @@ function getRescate($id_rescate){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/index.php");
         });
         </script>';
     die();
