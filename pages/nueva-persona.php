@@ -1,14 +1,7 @@
 <?php
 require_once('../loads.php');
 
-$datos_rescatistas = getPersonas();
 
-foreach($datos_rescatistas as $indexItem => &$rescatista ){
-    if($rescatista['tipo_persona']=='ADOPTANTE'){
-        unset($datos_rescatistas[$indexItem]);
-    }
-}
-$rescatistasObj = json_decode(json_encode((object) $datos_rescatistas), FALSE);
 // echo '<pre>';
 // print_r($datos_rescatistas);
 // echo '</pre>';
@@ -21,7 +14,7 @@ $rescatistasObj = json_decode(json_encode((object) $datos_rescatistas), FALSE);
       include('includes-head.php')
     ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Persona</title>
+    <title>Nueva Persona</title>
 </head>
 <body>
     <?php 
@@ -32,7 +25,7 @@ $rescatistasObj = json_decode(json_encode((object) $datos_rescatistas), FALSE);
 <div class="container m-5" >
     <div class="row">
         <div class="col text-left ml-3 mb-3">
-            <h3>Nuevo Rescate</h3>
+            <h3>Nuevo Persona</h3>
             <hr>
         </div>
         <div class="col text-right ml-3 mb-3">
