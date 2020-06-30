@@ -401,14 +401,9 @@ function getDomicilio($id_domicilio){
     $sql = "SELECT * FROM $domicilio WHERE id_domicilio= $id_domicilio AND activo = '1' ";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $domicilio ROW $i "); 
+    if(!$conexionbd->error){            
+        $datos = $res->fetch_assoc();
+        write_file($ruta_read, "R $domicilio ROW 1"); 
     }else{
         echo '<script>
         swal({
@@ -416,7 +411,7 @@ function getDomicilio($id_domicilio){
         text: "NO HAY DATOS PARA MOSTRAR!",
         type: "error"
          }).then (()=>{
-       window.location.href = ("/amigosproanimal/pages/home.php");
+       window.location.href = ("/amigosproanimal/pages/index.php");
         });
         </script>';
     die();
