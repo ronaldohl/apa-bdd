@@ -245,34 +245,35 @@ if($_POST){
     echo '</pre>';
     $datos_rescate = $rescateModelArray;
     $datos_domicilio = $domicilioModelArray;
-    $datos_mascota = $mascotaModelArray();
+    $datos_mascota = $mascotaModelArray;
      $centro_apa = $_POST['centro'];
 
-    $datos_domicilio['calle'] = $_POST['calle']; 
-    $datos_domicilio['numero_ext'] = $_POST['numero_ext']; 
-    $datos_domicilio['interior'] = $_POST['interior']; 
-    $datos_domicilio['colonia'] = $_POST['colonia']; 
-    $datos_domicilio['cp'] = $_POST['cp']; 
-    $datos_domicilio['municipio'] = $_POST['municipio']; 
+    if($_POST['calle']){$datos_domicilio['calle'] = $_POST['calle']; }
+    if($_POST['numero_ext']){$datos_domicilio['numero_ext'] = $_POST['numero_ext']; }
+    if($_POST['interior']){$datos_domicilio['interior'] = $_POST['interior']; }
+    if($_POST['colonia']){$datos_domicilio['colonia'] = $_POST['colonia']; }
+    if($_POST['cp']){$datos_domicilio['cp'] = $_POST['cp']; }
+    if($_POST['municipio']){$datos_domicilio['municipio'] = $_POST['municipio']; }
     $datos_domicilio['centro'] = $centro_apa;
     
     
     $datos_rescate['centro'] = $centro_apa;
-    $datos_rescate['fecha_rescate'] = $_POST['fecha_rescate'];
-    $datos_rescate['id_persona'] = $_POST['id_persona'];
-    $datos_rescate['id_domicilio'] = $_POST['id_domicilio'];
-    $datos_rescate['anotaciones'] = $_POST['anotaciones'];
+    if($_POST['fecha_rescate']){$datos_rescate['fecha_rescate'] = $_POST['fecha_rescate'];}
+    if($_POST['id_rescatista']){$datos_rescate['id_persona'] = $_POST['id_rescatista'];}
+    if($_POST['anotaciones']){$datos_rescate['anotaciones'] = $_POST['anotaciones'];}
+    
+    //if($_POST['id_domicilio']){$datos_rescate['id_domicilio'] = $_POST['id_domicilio'];}
     
     
     $datos_mascota['id_rescate'] = '';
-    $datos_mascota['nombre'] = $_POST['nombre'];
-    $datos_mascota['especie'] = $_POST['especie'];
-    $datos_mascota['detalles_especie'] = $_POST['detalles_especie'];
-    $datos_mascota['fecha_nac'] = $_POST['fecha_nac'];
-    $datos_mascota['condicion_rescate'] = $_POST['condicion_rescate'];
-    $datos_mascota['estatus'] = $_POST['estatus'];
+    if($_POST['nombre']){$datos_mascota['nombre'] = $_POST['nombre'];}
+    if($_POST['especie']){$datos_mascota['especie'] = $_POST['especie'];}
+    if($_POST['detalles_especie']){$datos_mascota['detalles_especie'] = $_POST['detalles_especie'];}
+    if($_POST['fecha_nac']){$datos_mascota['fecha_nac'] = $_POST['fecha_nac'];}
+    if($_POST['condicion_rescate']){$datos_mascota['condicion_rescate'] = $_POST['condicion_rescate'];}
+    //if($_POST['estatus']){$datos_mascota['estatus'] = $_POST['estatus'];}
     $datos_mascota['centro'] = $centro_apa;
-    
+    $datos_mascota['estatus'] = 'RESCATE-APA';
     echo 'Domicilio:';
     echo '<pre>';
     print_r($datos_domicilio);
