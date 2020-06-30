@@ -25,7 +25,7 @@ require_once('../loads.php');
 <div class="container m-5" >
     <div class="row">
         <div class="col text-left ml-3 mb-3">
-            <h3>Nuevo Persona</h3>
+            <h3>Nueva Persona</h3>
             <hr>
         </div>
         <div class="col text-right ml-3 mb-3">
@@ -45,9 +45,9 @@ require_once('../loads.php');
                                     <i class="fas fa-list"></i>
                                 </div>
                             </div>
-                            <select class="form-control" name="tipo_persona" id="zona" required>             
-                             <option value='CENTRO'>ADOPTANTE</option>;
-                            <option value='NORTE'>RESCATISTA</option>;
+                            <select class="form-control" name="tipo_persona" id="" required>             
+                             <option value='ADOPTANTE'>ADOPTANTE</option>;
+                            <option value='RESCATISTA'>RESCATISTA</option>;
                             </select>
                         </div>
                     </div>  
@@ -103,7 +103,7 @@ require_once('../loads.php');
                                     <i class="fa fa-mobile"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" placeholder="Telefono celular...">
+                            <input type="tel" name="celular" class="form-control" id="inlineFormInputGroup" placeholder="Telefono celular...">
                         </div>
                     </div>
                     <p class="masthead-subheading font-weight-light ">Telefono <small> (Opcional)</small></p>
@@ -209,6 +209,11 @@ require_once('../loads.php');
 
 if(!$_POST){
 
+}
+if($_POST){
+    echo '<pre>';   
+    print_r($_POST);
+    echo '</pre>';   
 }
 ?>
 </body>
