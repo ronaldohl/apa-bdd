@@ -497,14 +497,10 @@ function getPersona($id_persona){
     $sql = "SELECT * FROM $persona WHERE id_persona = $id_persona AND activo = '1' ";
     global $conexionbd;
     $res =   $conexionbd->query($sql);
-    if($res->num_rows){            
-        $i = 0;
-        $bytes = 0;
-        while($row = $res->fetch_assoc()){
-            $datos[$i] = ($row);
-            $i++;
-        }
-        write_file($ruta_read, "R $persona ROW $i ");
+    if(!$conexionbd->error){
+        $datos = $res->fetch_assoc();
+        
+        write_file($ruta_read, "R $persona ROW 1 ");
     }else{
         echo '<script>
         swal({

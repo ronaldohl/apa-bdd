@@ -1,6 +1,14 @@
 <?php
 require_once('../loads.php');
 
+if(!$_GET['id']){
+    redirect('personas.php');
+}else{
+    $id_persona = $_GET['id'];
+
+    $datos_persona = getPersona($id_persona);
+    print_r($datos_persona);
+}
 
 // echo '<pre>';
 // print_r($datos_rescatistas);
@@ -14,7 +22,7 @@ require_once('../loads.php');
       include('includes-head.php')
     ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Persona</title>
+    <title>Ver Persona</title>
 </head>
 <body>
     <?php 
@@ -46,7 +54,7 @@ require_once('../loads.php');
                                 </div>
                             </div>
                             <select class="form-control" name="tipo_persona" readonly id="zona" required>             
-                             <option value='CENTRO'>ADOPTANTE</option>;
+                            <option value=""><?php echo $datos_persona['centro']; ?></option> 
                             </select>
                         </div>
                     </div>  
@@ -58,7 +66,7 @@ require_once('../loads.php');
                                     <i class="fa fa-male"></i>
                                 </div>
                             </div>
-                            <input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" readonly placeholder="Nombre de la persona..." required="required" data-validation-required-message="Por favor ingresa el nombre de la persona">
+                            <input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php echo $datos_persona['nombre']; ?>" readonly >
                         </div>
                     </div>
                     <p class="masthead-subheading font-weight-light ">Apellido Paterno</p>
@@ -69,10 +77,10 @@ require_once('../loads.php');
                                     <i class="fa fa-walking"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_paterno" class="form-control" id="inlineFormInputGroup" readonly placeholder="Apellido paterno..." required="required" data-validation-required-message="Por favor ingresa el apellido paterno">
+                            <input type="text" name="apellido_paterno" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php echo $datos_persona['apellido_paterno']; ?>">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Apellido Materno <small> (Opcional)</small></p>
+                    <p class="masthead-subheading font-weight-light ">Apellido Materno</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -80,10 +88,10 @@ require_once('../loads.php');
                                     <i class="fa fa-running"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" readonly placeholder="Apellido materno...">
+                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php if($datos_persona['apellido_materno']){echo $datos_persona['apellido_materno'];} ?>">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Fecha de Nacimiento <small> (Opcional)</small></p>
+                    <p class="masthead-subheading font-weight-light ">Fecha de Nacimiento</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -91,10 +99,10 @@ require_once('../loads.php');
                                     <i class="fa fa-calendar"></i>
                                 </div>
                             </div>
-                            <input type="date" name="fecha_nacimiento" class="form-control " readonly placeholder="Fecha Nacimiento">
+                            <input type="date" name="fecha_nacimiento" class="form-control " readonly placeholder="<?php echo $datos_persona['fecha_nacimiento']; ?>" value="<?php echo $datos_persona['fecha_nacimiento']; ?>">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Celular <small> (Opcional)</small></p>
+                    <p class="masthead-subheading font-weight-light ">Celular</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -102,7 +110,7 @@ require_once('../loads.php');
                                     <i class="fa fa-mobile"></i>
                                 </div>
                             </div>
-                            <input type="text" name="apellido_materno" class="form-control" id="inlineFormInputGroup" readonly placeholder="Telefono celular...">
+                            <input type="text" name="" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php echo $datos_persona['celular']; ?>">
                         </div>
                     </div>
                     <p class="masthead-subheading font-weight-light ">Telefono <small> (Opcional)</small></p>
