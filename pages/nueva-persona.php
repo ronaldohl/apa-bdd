@@ -21,7 +21,7 @@ $rescatistasObj = json_decode(json_encode((object) $datos_rescatistas), FALSE);
       include('includes-head.php')
     ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Reporte</title>
+    <title>Nuevo Persona</title>
 </head>
 <body>
     <?php 
@@ -63,11 +63,7 @@ $rescatistasObj = json_decode(json_encode((object) $datos_rescatistas), FALSE);
                             </div>
                                 <select class="form-control" name="id_rescatista" id="rescatista" required>             
                                     
-                                    <?php  
-                                foreach($rescatistasObj as $r){
-                                    echo '<option value=" '. $r->id_persona.'  "> '. $r->nombre .' '. " " .' '. $r->apellido_paterno.'  </option>';
-                                };
-                                ?>
+                                   <option value="HOLA">HOLA</option>
                                 </select>
 
                         </div>
@@ -239,131 +235,6 @@ $rescatistasObj = json_decode(json_encode((object) $datos_rescatistas), FALSE);
 if(!$_POST){
 
 }
-if($_POST){
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
-    $datos_rescate = $rescateModelArray;
-    $datos_domicilio = $domicilioModelArray;
-    $datos_mascota = $mascotaModelArray();
-     $centro_apa = $_POST['centro'];
-
-    $datos_domicilio['calle'] = $_POST['calle']; 
-    $datos_domicilio['numero_ext'] = $_POST['numero_ext']; 
-    $datos_domicilio['interior'] = $_POST['interior']; 
-    $datos_domicilio['colonia'] = $_POST['colonia']; 
-    $datos_domicilio['cp'] = $_POST['cp']; 
-    $datos_domicilio['municipio'] = $_POST['municipio']; 
-    $datos_domicilio['centro'] = $centro_apa;
-    
-    
-    $datos_rescate['centro'] = $centro_apa;
-    $datos_rescate['fecha_rescate'] = $_POST['fecha_rescate'];
-    $datos_rescate['id_persona'] = $_POST['id_persona'];
-    $datos_rescate['id_domicilio'] = $_POST['id_domicilio'];
-    $datos_rescate['anotaciones'] = $_POST['anotaciones'];
-    
-    
-    $datos_mascota['id_rescate'] = '';
-    $datos_mascota['nombre'] = $_POST['nombre'];
-    $datos_mascota['especie'] = $_POST['especie'];
-    $datos_mascota['detalles_especie'] = $_POST['detalles_especie'];
-    $datos_mascota['fecha_nac'] = $_POST['fecha_nac'];
-    $datos_mascota['condicion_rescate'] = $_POST['condicion_rescate'];
-    $datos_mascota['estatus'] = $_POST['estatus'];
-    $datos_mascota['centro'] = $centro_apa;
-    
-    echo 'Domicilio:';
-    echo '<pre>';
-    print_r($datos_domicilio);
-    echo '</pre>';
-    echo 'Rescate:';
-    echo '<pre>';
-    print_r($datos_rescate);
-    echo '</pre>';
-    echo 'Mascota:';
-    echo '<pre>';
-    print_r($datos_mascota);
-    echo '</pre>';
-    
-    
-    
-    
-    /**********Comprobación de POST  ************ */
-    $url = 'rescates.php';
-    /*if (!$_POST['tipo_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               window.location.href = ("/amigosproanimal/pages/reportes.php");
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['descripcion_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['evaluacion_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['fecha_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['centro']){
-        redirect($url);
-    }*/
-
-
-    $datos_rescate['fecha_rescate'] = $_POST['fecha_rescate'];
-
-    /*$datos_reporte['tipo_reporte'] = $_POST['tipo_reporte'];
-    $datos_reporte['descripcion_reporte'] = $_POST['descripcion_reporte'];
-    $datos_reporte['evaluacion_reporte'] = $_POST['evaluacion_reporte'];
-    $datos_reporte['fecha_reporte'] = $_POST['fecha_reporte'];
-    $datos_reporte['centro'] = $_POST['centro'];
-*/
-    // if($_POST['detalles_tipo']){
-    //     $datos_reporte['detalles_tipo'] = $_POST['detalles_tipo'];
-    // }
-    // if($_POST['detalles_evaluacion']){
-    //     $datos_reporte['detalles_evaluacion'] = $_POST['detalles_evaluacion'];
-    // }
-    // include ('includes-head.php');
-    //$res = postReporte($datos_reporte);
-    // if($res){
-    //     print_r($res);
-    // }
-    
-
-}
-
-
 ?>
 </body>
 </html>
