@@ -7,7 +7,8 @@ if(!$_GET['id']){
     $id_persona = $_GET['id'];
 
     $datos_persona = getPersona($id_persona);
-    print_r($datos_persona);
+    // print_r($datos_persona);
+    $datos_domicilio = getDomicilio($datos_persona['id_domicilio']);
 }
 
 // echo '<pre>';
@@ -113,7 +114,7 @@ if(!$_GET['id']){
                             <input type="text" name="" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php echo $datos_persona['celular']; ?>">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Telefono <small> (Opcional)</small></p>
+                    <p class="masthead-subheading font-weight-light ">Telefono </p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -121,10 +122,10 @@ if(!$_GET['id']){
                                     <i class="fa fa-phone-alt"></i>
                                 </div>
                             </div>
-                            <input type="text" name="telefono" class="form-control" id="inlineFormInputGroup" readonly placeholder="Telefono de casa...">
+                            <input type="text" name="telefono" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php echo $datos_persona['telefono']; ?>">
                         </div>
                     </div>
-                    <p class="masthead-subheading font-weight-light ">Correo <small> (Opcional)</small> </p>
+                    <p class="masthead-subheading font-weight-light ">Correo</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
                             <div class="input-group-addon">
@@ -132,7 +133,7 @@ if(!$_GET['id']){
                                     <i class="fa fa-envelope"></i>
                                 </div>
                             </div>
-                            <input type="text" name="correo" class="form-control" id="inlineFormInputGroup" readonly placeholder="ej: arturolopez@gmail.com">
+                            <input type="text" name="correo" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php echo $datos_persona['correo']; ?>">
                         </div>
                     </div>
                     <hr>
@@ -145,10 +146,10 @@ if(!$_GET['id']){
                                             <i class="fa fa-home"></i>
                                         </div>
                                     </div>
-                                    <input type="text" name="calle" class="form-control " readonly placeholder="Calle..." required aria-required="true" pattern="[A-Za-z ]{1,100}" title="Sólo letras Máximo 100" required="required" data-validation-required-message="Por favor ingresa el nombre de la calle.">
+                                    <input type="text" name="calle" class="form-control " readonly placeholder="<?php echo $datos_domicilio['calle']; ?>" required aria-required="true"  required="required" >
                                 </div>
                             </div>
-                            <label class="form-label mt-2">Numero exterior: <small> (Opcional)</small></label>
+                            <label class="form-label mt-2">Numero exterior:</label>
                             <div class="form-row  justify-content-center">
                                 <div class="input-group mb-2 text-center col-11">
                                     <div class="input-group-addon">
@@ -156,16 +157,16 @@ if(!$_GET['id']){
                                             <i class="fa fa-building"></i>
                                         </div>
                                     </div>
-                                    <input type="number" min="0" max="9999" name="numero_ext" class="form-control " readonly placeholder="Numero">
+                                    <input type="number" min="0" max="9999" name="numero_ext" class="form-control " readonly placeholder="<?php if($datos_domicilio['numero_ext']){echo $datos_domicilio['numero_ext'];} ?>">
                                 </div>
                             </div>
-                            <label class="form-label mt-2">Número Interior: <small> (Opcional)</small></label>
+                            <label class="form-label mt-2">Número Interior: </label>
                             <div class="form-row  justify-content-center">
                                 <div class="input-group mb-2 text-center col-11">
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-level-down"></i></div>
                                     </div>
-                                    <input type="text" name="interior" class="form-control" id="inlineFormInputGroup" readonly placeholder="Número interior">
+                                    <input type="text" name="interior" class="form-control" id="inlineFormInputGroup" readonly  placeholder="<?php if($datos_domicilio['interior']){echo $datos_domicilio['interior'];} ?>">
                                 </div>
                             </div>
                             <label class="form-label mt-2">Colonia:</label>
@@ -174,7 +175,7 @@ if(!$_GET['id']){
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-location-arrow"></i></div>
                                     </div>
-                                    <input type="text" name="colonia" class="form-control" id="inlineFormInputGroup" readonly placeholder="Ingresa la colonia..." required="required" data-validation-required-message="Por favor ingresa nombre de la colonia">
+                                    <input type="text" name="colonia" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php if($datos_domicilio['colonia']){echo $datos_domicilio['colonia'];} ?>" required="required" data-validation-required-message="Por favor ingresa nombre de la colonia">
                                 </div>
                             </div>
                             <label class="form-label mt-2">Codigo Postal: <small> (Opcional)</small></label>
@@ -183,7 +184,7 @@ if(!$_GET['id']){
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-map-signs"></i></div>
                                     </div>
-                                    <input type="text" name="cp" class="form-control" id="inlineFormInputGroup" readonly placeholder="Ingresa el codigo postal...">
+                                    <input type="text" name="cp" class="form-control" id="inlineFormInputGroup" readonly placeholder="<?php if($datos_domicilio['cp']){echo $datos_domicilio['cp'];} ?>">
                                 </div>
                             </div>
                             <label class="form-label mt-2">Municipio:</label>
@@ -193,7 +194,7 @@ if(!$_GET['id']){
                                         <div class="input-group-text"><i class="fa fa-map-marker"></i></div>
                                     </div>
                                     <select class="form-control" name="municipio" readonly id="zona" required="required" data-validation-required-message="Por favor selecciona un municipio">             
-                                  <option value='AGUASCALIENTES'>Aguascalientes</option>;
+                                  <option value=''><?php if($datos_domicilio['municipio']){echo $datos_domicilio['municipio'];} ?></option>;
                             </select>
                                 </div>
                             </div>
