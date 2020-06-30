@@ -274,93 +274,56 @@ if($_POST){
     //if($_POST['estatus']){$datos_mascota['estatus'] = $_POST['estatus'];}
     $datos_mascota['centro'] = $centro_apa;
     $datos_mascota['estatus'] = 'RESCATE-APA';
-    echo 'Domicilio:';
-    echo '<pre>';
-    print_r($datos_domicilio);
-    echo '</pre>';
-    echo 'Rescate:';
-    echo '<pre>';
-    print_r($datos_rescate);
-    echo '</pre>';
-    echo 'Mascota:';
-    echo '<pre>';
-    print_r($datos_mascota);
-    echo '</pre>';
+
+    //Registramos pirmero el domicilio para obtener su id
+    $domicilio_registrado = postDomicilio($datos_domicilio);
+
+    // asignamos el id_domicilio a nuestra variable datos_rescate
+    $datos_rescate['id_domicilio'] = $domicilio_registrado['id_domicilio'];
+
+    //Ahora si podemos registrar el rescate para que nos devuelva el array con su id y asignarlo a mascota
+    $rescate_registrado = postRescate($datos_rescate);
+
+    // asignamos el id_rescate a nuestra variable datos_mascota
+    $datos_mascota['id_rescate'] = $rescate_registrado['id_rescate'];
+
+    //Registramos por ultimo nuestra mascota
+    $mascota_registrada = postMascota($datos_mascota);
     
-    
+
+    if($mascota_registrada['id_mascota']!= '' && $domicilio_registrado['id_domicilio']!= '' && $rescate_registrado['id_rescate']!= ''){
+        echo '
+
+        <script>
+         $(document).ready(
+        swal({
+            title: "GRACIAS",
+            text: "SE REGISTRÓ TU RESCATE!",
+            type: "success"
+        }).then (()=>{
+            window.location.href = ("/amigosproanimal/pages/rescates.php");          
+        }));
+        </script>
+        ';
+        
+    }else{
+        echo '
+        <script>
+         $(document).ready(
+        swal({
+            title: "ERROR",
+            text: "NO SE COMPLETO EL RESCATE!",
+            type: "error"
+        }).then (()=>{               
+        }));
+        </script>
+        ';
+    }
     
     
     /**********Comprobación de POST  ************ */
     $url = 'rescates.php';
-    /*if (!$_POST['tipo_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               window.location.href = ("/amigosproanimal/pages/reportes.php");
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['descripcion_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['evaluacion_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['fecha_reporte']){
-        echo '<script>
-            swal({
-                title: "ERROR",
-                text: "Favor de llenar todos los campos!",
-                type: "error"
-            }).then (()=>{
-               
-            });
-                </script>';  
-        redirect($url);
-    }elseif(!$_POST['centro']){
-        redirect($url);
-    }*/
-
-
-    $datos_rescate['fecha_rescate'] = $_POST['fecha_rescate'];
-
-    /*$datos_reporte['tipo_reporte'] = $_POST['tipo_reporte'];
-    $datos_reporte['descripcion_reporte'] = $_POST['descripcion_reporte'];
-    $datos_reporte['evaluacion_reporte'] = $_POST['evaluacion_reporte'];
-    $datos_reporte['fecha_reporte'] = $_POST['fecha_reporte'];
-    $datos_reporte['centro'] = $_POST['centro'];
-*/
-    // if($_POST['detalles_tipo']){
-    //     $datos_reporte['detalles_tipo'] = $_POST['detalles_tipo'];
-    // }
-    // if($_POST['detalles_evaluacion']){
-    //     $datos_reporte['detalles_evaluacion'] = $_POST['detalles_evaluacion'];
-    // }
-    // include ('includes-head.php');
-    //$res = postReporte($datos_reporte);
-    // if($res){
-    //     print_r($res);
-    // }
-    
+  
 
 }
 
