@@ -97,7 +97,7 @@
 
 <?php 
         include('./pages/includes-body.php');
-        //  include('./pages/footer.php');
+          include('./pages/footer.php');
     ?>
 </body>
 </html>
