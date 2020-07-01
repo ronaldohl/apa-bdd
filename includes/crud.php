@@ -1506,19 +1506,22 @@ function putRescate($datos){
         $conexionbd->query("$lock_tables $rescate WRITE");
         $conexionbd->query($sql);
         if(!$conexionbd->error){
+
             //Insert correcto
             echo '<script>
             swal({
                 title: "GRACIAS",
                 text: "SE ACTUALIZÓ EL RESCATE!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{
+                window.location.href = ("/amigosproanimal/pages/rescates.php");            
             });
             </script>';
             write_file($ruta_write, "W $rescate ROW 1 "); 
             $conexionbd->query($unlock_tables);
             return getRescate($datosObj->id_rescate);
         }else{
+            echo $conexionbd->error;
             echo '<script>
             swal({
                 title: "ERROR",
@@ -1553,12 +1556,12 @@ function putUsuario($datos){
         if(!$conexionbd->error){
             //Insert correcto
             echo '<script>
-            swal({
+            $(document).ready(swal({
                 title: "GRACIAS",
                 text: "SE ACTUALIZO EL USUARIO!",
                 type: "success"
             }).then (()=>{               
-            });
+            }));
             </script>';
             write_file($ruta_write, "W $usuario ROW 1 "); 
             $conexionbd->query($unlock_tables);
