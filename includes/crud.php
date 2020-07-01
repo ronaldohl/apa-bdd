@@ -1321,13 +1321,14 @@ function putMascota($datos){
             $conexionbd->query($unlock_tables);
             return getMascota($datosObj->id_mascota);
         }else{
+            // echo $conexionbd->error;
             echo '<script>
             swal({
                 title: "ERROR",
                 text: "OCURRIÓ UN ERROR VOLVIENDO A INICIO!",
                 type: "error"
             }).then (()=>{
-               window.location.href = ("/amigosproanimal/index.php");
+                window.location.href = ("/amigosproanimal/pages/mascotas.php"); 
             });
                 </script>';          
             
