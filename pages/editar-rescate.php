@@ -4,9 +4,7 @@ require_once('../loads.php');
 
 if(!$_GET['id']){
     redirect('rescates.php');
-}
-  
-
+}  
 // echo '<pre>';
 // print_r($_POST);
 // echo '</pre>';
@@ -271,8 +269,6 @@ if($_POST){
     // echo '<pre>';
     // print_r($resultado); 
     // echo '</pre>';
-
-
 }
 
 
