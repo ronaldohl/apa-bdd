@@ -96,7 +96,7 @@ $datos_mascota = getMascota($id_mascota);
                     <div class="input-group-text"><i class="fa fa-heart"></i></div>
                 </div>
                 <select class="form-control" name="condicion_rescate" id="centro" required="required"
-                    data-validation-required-message="Por favor selecciona una condicion de rescate" required="required"                    
+                    data-validation-required-message="Por favor selecciona una condicion de rescate" required="required">                    
                     <option value='BUENA'<?php echo ($datos_mascota['condicion_rescate']=='BUENA')?'selected="selected"': ''; ?> >Buena</option>;
                     <option value='REGULAR'<?php echo ($datos_mascota['condicion_rescate']=='REGULAR')?'selected="selected"': ''; ?> >Regular</option>;
                     <option value='MALA'<?php echo ($datos_mascota['condicion_rescate']=='MALA')?'selected="selected"': ''; ?> >Mala</option>;
