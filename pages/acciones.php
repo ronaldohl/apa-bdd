@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php include('header.php')?>
-        <div class="container mt-4 mb-4">
+        <div class="container mt-4 mb-5">
             <div class="row">
                 <div class="col">
                     <div class="card ml-1 mr-1">
@@ -51,5 +51,6 @@
             </div>
         </div>
     <?php include('includes-body.php')?>
+    <?php include('footer.php')?>
 </body>
 </html>

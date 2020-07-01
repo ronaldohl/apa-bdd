@@ -102,9 +102,10 @@ $url = 'rescates.php';
                                     <i class="fa fa-user"></i>
                                 </div>
                             </div>
-                                <select class="form-control" name="id_rescatista" id="rescatista" required>             
-                                    <option value=""><?php $datos_rescatista['nombre']; ?></option>
+                                <select class="form-control" name="id_rescatista" id="rescatista" readonly>             
+                                    <option value=""><?php echo $datos_rescatista['nombre']; echo ' '.$datos_rescatista['apellido_paterno'] ?></option>
                                     <?php  
+                                    // echo print_r($datos_rescatista);
                                 // foreach($rescatistasObj as $r){                            
                                 //     echo '<option value=" '.$r->id_persona. '"'; if($r->id_persona == $id_rescatista){echo 'selected="selected"';}else{echo ' ';} echo ' > '.$r->nombre .' '. $r->apellido_paterno.' </option>' ;                                     
                                 // };
@@ -123,9 +124,8 @@ $url = 'rescates.php';
                                     <i class="fas fa-hotel"></i>
                                 </div>
                             </div>
-                            <select class="form-control" name="centro" id="zona" required>             
-                            <option value="CENTRO" <?php echo ($datos_rescate['centro']=='CENTRO')?'selected="selected"': ''; ?>>Centro</option>
-                        <option value="NORTE" <?php echo ($datos_rescate['centro']=='NORTE')?'selected="selected"': ''; ?>>Norte</option>
+                            <select class="form-control" name="centro" id="zona" readonly>             
+                                <option value="" <?php echo $datos_rescate['centro']; ?>>Centro</option>                        
                             </select>
                         </div>
                     </div>
@@ -136,23 +136,18 @@ $url = 'rescates.php';
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-edit"></i></div>
                                     </div>
-                                    <textarea type="text" name="anotaciones" class="form-control" id="inlineFormInputGroup" placeholder="<?php echo $datos_rescate['anotaciones']; ?>" value="<?php echo $datos_rescate['anotaciones']; ?>"></textarea>
+                                    <textarea  readonly type="text" name="anotaciones" class="form-control" id="inlineFormInputGroup" placeholder="<?php echo $datos_rescate['anotaciones']; ?>" value="<?php echo $datos_rescate['anotaciones']; ?>"></textarea>
                                 </div>
                             </div>
                     <hr>
                     <h3 class="font-bold text-primary">Datos Lugar de Rescate</h3>
                     <div class="form-row mt-2 mb-2">
                         <div class="col text-right mr-5">
-                        <h4 class="text-right">Opciones de Domicilio <small>(Ver Domicilio, Editar Domicilio, Borrar Domicilio)</small></h4>
+                        <h4 class="text-right">Opciones de Domicilio <small>(Ver Domicilio)</small></h4>
                             <a class="btn btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-domicilio?id=<?php echo $datos_domicilio['id_domicilio']; ?>">
                                 <i  class="fa fa-eye"></i>
                             </a>
-                            <a class="btn btn-info mr-1 ml-1"  href="/amigosproanimal/pages/editar-domicilio?id=<?php echo $datos_domicilio['id_domicilio']; ?>" > 
-                                <i class="fa fa-edit"></i>
-                            </a>
-                            <a class="btn btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?dato=domicilio&id=<?php echo $datos_domicilio['id_domicilio']; ?>">
-                                <i class="fas fa-trash"></i>
-                            </a> 
+                            
                         </div>
                     </div>
                     <label class="form-label mt-2">Nombre de la calle:</label>
@@ -219,12 +214,7 @@ $url = 'rescates.php';
                                     <a class="btn btn-primary mrs-1 ml-1 " href="/amigosproanimal/pages/ver-mascota?id=<?php echo $datos_mascota['id_mascota']; ?>">
                                         <i  class="fa fa-eye"></i>
                                     </a>
-                                    <a class="btn btn-info mr-1 "  href="/amigosproanimal/pages/editar-mascota?id="<?php echo $datos_mascota['id_mascota']; ?> > 
-                                        <i class="fa fa-edit"></i>
-                                    </a>
-                                    <a class="btn btn-danger mr-1 " href="/amigosproanimal/pages/borrar?dato=mascota&id=<?php echo $datos_mascota['id_mascota']; ?>">
-                                        <i class="fas fa-trash"></i>
-                                    </a> 
+                                    
                                 </div>
                             </div>
                                                           
@@ -232,7 +222,7 @@ $url = 'rescates.php';
                     <div class="form-row ">
                         <div class="col mr-5">
                             <div class="text-right">
-                                <button type="submit" class="mt-2 btn btn-success btn-lg " value="Enviar"><i class="fa fa-check ml-2"></i> Guardar</button>
+                            <a href="rescates.php" class="btn btn-danger"><i class="fa fa-arrow-left mr-2"></i>Regresar</a>
                             </div>
                         </div>
                     </div>

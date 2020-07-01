@@ -12,7 +12,7 @@
         }
     ?>
 </head>
-<body class="mb-50">
+<body class="">
 <?php 
     include ('header.php');
 ?>
