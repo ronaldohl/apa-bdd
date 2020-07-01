@@ -1207,7 +1207,8 @@ function putDomicilio($datos){
                 title: "GRACIAS",
                 text: "SE ACTUALIZÓ EL DOMICILIO!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{
+                window.location.href = ("/amigosproanimal/index.php");               
             });
             </script>';
             write_file($ruta_write, "W $domicilio ROW 1 "); 
