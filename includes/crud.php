@@ -1349,8 +1349,8 @@ function putPersona($datos){
              apellido_paterno = '$datosObj->apellido_paterno',
              apellido_materno = '$datosObj->apellido_materno', 
              fecha_nacimiento = '$datosObj->fecha_nacimiento', 
-             celular = $datosObj->celular,
-             telefono = $datosObj->telefono, 
+             celular = '$datosObj->celular',
+             telefono = '$datosObj->telefono', 
              correo = '$datosObj->correo', 
              id_domicilio = $datosObj->id_domicilio,        
              centro = '$datosObj->centro'
@@ -1367,12 +1367,14 @@ function putPersona($datos){
                 title: "GRACIAS",
                 text: "SE ACTUALIZÓ LA PERSONA!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{
+                window.location.href = ("/amigosproanimal/pages/personas.php");               
             });
             </script>';
             $conexionbd->query($unlock_tables);
             return getPersona($datosObj->id_persona);
         }else{
+            echo $conexionbd->error;
             echo '<script>
             swal({
                 title: "ERROR",
