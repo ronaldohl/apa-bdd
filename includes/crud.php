@@ -1416,7 +1416,8 @@ function putProducto($datos){
                 title: "GRACIAS",
                 text: "SE ACTUALIZÓ EL PRODUCTO!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{    
+                window.location.href = ("/amigosproanimal/pages/inventario.php");
             });
             </script>';
             write_file($ruta_write, "W $producto ROW 1 "); 
