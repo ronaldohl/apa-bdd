@@ -22,14 +22,14 @@ require_once('../loads.php');
         
     ?>
     <div class="container m-5">
-                    <form action="estado-cuenta.php" method="POST">
+                    <form action="nuevo-producto.php" method="POST">
                             <label class="form-label mt-2">Nombre del Producto:</label>
                             <div class="form-row  justify-content-center">
                                 <div class="input-group mb-2 text-center col-11">
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-cube"></i></div>
                                     </div>
-                                    <input type="text" name="producto" class="form-control" id="inlineFormInputGroup" placeholder="Nombre del producto..." required="required" data-validation-required-message="Por favor ingresa el nombre del producto">
+                                    <input type="text" name="nombre" class="form-control" id="inlineFormInputGroup" placeholder="Nombre del producto..." required="required" data-validation-required-message="Por favor ingresa el nombre del producto">
                                 </div>
                             </div>
                             <label class="form-label mt-2">Tipo de Producto:</label>
@@ -38,7 +38,11 @@ require_once('../loads.php');
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-cubes"></i></div>
                                     </div>
-                                    <input type="text" name="tipo" class="form-control" id="inlineFormInputGroup" placeholder="Tipo del producto..." required="required" data-validation-required-message="Por favor ingresa un tipo de producto">
+                                    <!-- <input type="text" name="tipo" class="form-control" id="inlineFormInputGroup" placeholder="Tipo del producto..." required="required" data-validation-required-message="Por favor ingresa un tipo de producto"> -->
+                                    <select  name="tipo" class="form-control" id="inlineFormInputGroup" placeholder="Tipo del producto..." required="required" data-validation-required-message="Por favor ingresa un tipo de producto">
+                                    <option value="VACUNA">Vacuna</option>
+                                    <option value="ALIMENTO">Alimento</option>
+                                    </select>
                                 </div>
                             </div>
                             <label class="form-label mt-2">Unidad Medida:</label>
@@ -68,15 +72,7 @@ require_once('../loads.php');
                                     <input type="text" name="descripcion" class="form-control" id="inlineFormInputGroup" placeholder="Ingresa alguna descripcion del producto..." required="required" data-validation-required-message="Por favor alguna descripcion del producto">
                                 </div>
                             </div>
-                            <label class="form-label mt-2">Fecha de Alta:</label>
-                            <div class="form-row  justify-content-center">
-                                <div class="input-group mb-2 text-center col-11">
-                                    <div class="input-group-addon">
-                                        <div class="input-group-text"><i class="fa fa-calendar-o"></i></div>
-                                    </div>
-                                    <input type="date" name="fecha_alta" class="form-control" id="inlineFormInputGroup" placeholder="Ingresa la fecha de alta..." required="required" data-validation-required-message="Por favor ingresa la fecha de alta">
-                                </div>
-                            </div>
+                            
                             
 				<label class="form-label mt-2">Centro:</label>
                             <div class="form-row  justify-content-center">
@@ -84,7 +80,7 @@ require_once('../loads.php');
                                     <div class="input-group-addon">
                                         <div class="input-group-text"><i class="fa fa-users"></i></div>
                                     </div>
-                                    <select class="custom-select" name="centro" id="centro" required="required" data-validation-required-message="Por favor selecciona un centro de APA">             
+                                    <select class="form-control" name="centro" id="centro" required="required" data-validation-required-message="Por favor selecciona un centro de APA">             
                                   <option value='CENTRO'>Zona Centro</option>;
                                 <option value='NORTE'>Zona Norte</option>;
                             </select>
@@ -107,9 +103,33 @@ if(!$_POST){
 
 }
 if($_POST){
-    // echo '<pre>';   
-    // print_r($_POST);
-    // echo '</pre>';   
+    $datos_producto = $productoModelArray;
+
+    if($_POST['nombre']){
+        $datos_producto['nombre'] = $_POST['nombre'];
+    }
+    if($_POST['tipo']){
+        $datos_producto['tipo'] = $_POST['tipo'];
+    }
+    if($_POST['unidad_medida']){
+        $datos_producto['unidad_medida'] = $_POST['unidad_medida'];
+    }
+    if($_POST['cantidad']){
+        $datos_producto['cantidad'] = $_POST['cantidad'];
+    }
+    if($_POST['descripcion']){
+        $datos_producto['descripcion'] = $_POST['descripcion'];
+    }
+    if($_POST['centro']){
+        $datos_producto['centro'] = $_POST['centro'];
+    }
+     //echo '<pre>';   
+     //print_r($_POST);
+     //echo '</pre>';   
+
+     $res = postProducto($datos_producto);
+
+     print_r($res);
 }
 ?>
 </body>

@@ -41,7 +41,7 @@ $datos_productos = getProductos();
              <div class="d-flex">
                  <div class="mr-auto">
                      <div class="form-group">
-                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-producto.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nuevo Producto
+                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nuevo-producto.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nuevo Producto
                         </a>
                          <small>Registra un nuevo Producto.</small> </div>
                  </div>
