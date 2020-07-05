@@ -90,7 +90,10 @@ $url = 'rescates.php';
                                     <i class="fa fa-calendar"></i>
                                 </div>
                             </div>
-                            <input type="date"  name="fecha_rescate" class="form-control " placeholder="Fecha Rescate" required aria-required="true" required="required" data-validation-required-message="Fecha Inválida." value="<?php echo $datos_rescate['fecha_rescate']; ?>">        
+                            <input type="date"  name="fecha_rescate" class="form-control " 
+                            placeholder="Fecha Rescate" required aria-required="true" 
+                            required="required" data-validation-required-message="Fecha Inválida." 
+                            value="<?php echo $datos_rescate['fecha_rescate']; ?>">        
                         </div>
                     </div>
                     <label class="form-label mt-2">Rescatista Apa:</label>
