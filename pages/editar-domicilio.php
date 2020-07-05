@@ -38,7 +38,7 @@ if(!$_GET['id']){
             <hr>
         </div>
         <div class="col text-right ml-3 mb-3">
-            <a href="./index.php" class="btn btn-outline-danger"><i class="fa fa-arrow-left mr-2"></i>Regresar</a>
+            <a href="/amigosproanimal/index.php" class="btn btn-outline-danger"><i class="fa fa-arrow-left mr-2"></i>Regresar</a>
             <hr>
         </div>
     </div>
