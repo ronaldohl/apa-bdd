@@ -38,7 +38,7 @@ $datos_donaciones = getDonaciones();
              <div class="d-flex">
                  <div class="mr-auto">
                      <div class="form-group">
-                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-donacion.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nueva Producto
+                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-donacion.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nueva Donacion
                         </a>
                          <small>Registra un nueva Donación.</small> </div>
                  </div>
