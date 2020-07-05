@@ -699,7 +699,7 @@ function postDonacion($datos){
             global $ruta_write;
             $datosObj = json_decode(json_encode((object) $datos), FALSE);
                 $sql = ("INSERT INTO $donacion (centro, fecha_donacion, nombre_donante, rfc, id_domicilio, telefono, correo, tipo_donacion, monto, descripcion)
-                VALUES ('$datosObj->centro', '$datosObj->fecha_donacion', '$datosObj->nombre_donante', '$datosObj->rfc', $datosObj->id_domicilio, $datosObj->telefono, '$datosObj->correo', '$datosObj->tipo_donacion', $datosObj->monto, '$datosObj->descripcion' ) ") ;
+                VALUES ('$datosObj->centro', '$datosObj->fecha_donacion', '$datosObj->nombre_donante', '$datosObj->rfc', $datosObj->id_domicilio, '$datosObj->telefono', '$datosObj->correo', '$datosObj->tipo_donacion', '$datosObj->monto', '$datosObj->descripcion' ) ") ;
                 global $lock_tables;
                 global $unlock_tables;
                 $conexionbd->query("$lock_tables $donacion WRITE");
@@ -720,6 +720,7 @@ function postDonacion($datos){
                     return getDonacion($id_res);
                    
                 }else{
+                    echo $conexionbd->error;
                     echo '<script>
                     swal({
                         title: "ERROR",
@@ -824,8 +825,8 @@ function postPersona($datos){
                 '$datosObj->apellido_paterno',
                 '$datosObj->apellido_materno', 
                 '$datosObj->fecha_nacimiento',
-                 $datosObj->celular,
-                 $datosObj->telefono, 
+                '$datosObj->celular',
+                '$datosObj->telefono', 
                 '$datosObj->correo', 
                  $datosObj->id_domicilio,
                 '$datosObj->centro'
@@ -841,13 +842,15 @@ function postPersona($datos){
                 title: "GRACIAS",
                 text: "SE REGISTRÓ LA PERSONA!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{
+                window.location.href = ("/amigosproanimal/pages/personas.php");               
             });
             </script>';
             $id_res = $conexionbd->insert_id;
             $conexionbd->query($unlock_tables);
             return getPersona($id_res);
         }else{
+            echo $conexionbd->error;
             echo '<script>
             swal({
                 title: "ERROR",

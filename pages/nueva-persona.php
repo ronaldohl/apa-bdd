@@ -29,7 +29,7 @@ require_once('../loads.php');
             <hr>
         </div>
         <div class="col text-right ml-3 mb-3">
-            <a href="rescates.php" class="btn btn-outline-danger"><i class="fa fa-arrow-left mr-2"></i>Regresar</a>
+            <a href="personas.php" class="btn btn-outline-danger"><i class="fa fa-arrow-left mr-2"></i>Regresar</a>
             <hr>
         </div>
     </div>
@@ -50,7 +50,19 @@ require_once('../loads.php');
                             <option value='RESCATISTA'>RESCATISTA</option>;
                             </select>
                         </div>
-                    </div>  
+                    </div>
+                    <label class="form-label mt-2">Centro:</label>
+                            <div class="form-row  justify-content-center">
+                                <div class="input-group mb-2 text-center col-11">
+                                    <div class="input-group-addon">
+                                        <div class="input-group-text"><i class="fa fa-users"></i></div>
+                                    </div>
+                                    <select class="form-control" name="centro" id="centro" required="required" data-validation-required-message="Por favor selecciona un centro de APA">             
+                                  <option value='CENTRO'>Zona Centro</option>;
+                                <option value='NORTE'>Zona Norte</option>;
+                            </select>
+                                </div>
+                            </div>  
                     <p class="masthead-subheading font-weight-light ">Nombre</p>
                     <div class="form-row  justify-content-center">
                         <div class="input-group mb-2 text-center col-11">
@@ -198,7 +210,7 @@ require_once('../loads.php');
                     <div class="form-row ">
                         <div class="col mr-5">
                             <div class="text-right">
-                                <button type="submit" class="mt-2 btn btn-success btn-lg " value="Enviar">Registrar Rescate  <i class="fa fa-check ml-2"></i> </button>
+                                <button type="submit" class="mt-2 btn btn-success btn-lg " value="Enviar">Registrar Persona  <i class="fa fa-check ml-2"></i> </button>
                             </div>
                         </div>
                     </div>
@@ -213,7 +225,103 @@ if(!$_POST){
 if($_POST){
     echo '<pre>';   
     print_r($_POST);
-    echo '</pre>';   
+    echo '</pre>';
+    
+    
+    $datos_domicilio = $domicilioModelArray;
+
+    if($_POST['centro']){
+        $datos_domicilio['centro'] = $_POST['centro'];
+    }else{
+        $datos_domicilio['centro'] = 'CENTRO';
+    }
+    if($_POST['calle']){
+        $datos_domicilio['calle'] = $_POST['calle'];
+    }else{
+        $datos_domicilio['calle'] = ' ';
+    }
+    if($_POST['numero_ext']){
+        $datos_domicilio['numero_ext'] = $_POST['numero_ext'];
+    }else{
+        $datos_domicilio['numero_ext'] = 'SN';
+    }
+    if($_POST['interior']){
+        $datos_domicilio['interior'] = $_POST['interior'];
+    }else{
+        $datos_domicilio['interior'] = ' ';
+    }
+    if($_POST['colonia']){
+        $datos_domicilio['colonia'] = $_POST['colonia'];
+    }else{
+        $datos_domicilio['colonia'] = ' ';
+    }
+    if($_POST['cp']){
+        $datos_domicilio['cp'] = $_POST['cp'];
+    }else{
+        $datos_domicilio['cp'] = ' ';
+    }
+    if($_POST['municipio']){
+        $datos_domicilio['municipio'] = $_POST['municipio'];
+    }else{
+        $datos_domicilio['municipio'] = 'AGUASCALIENTES';
+    }
+
+
+     $res_domicilio = postDomicilio($datos_domicilio);
+     $id_domicilio = $res_domicilio['id_domicilio'];
+
+    $datos_persona = $personaModelArray;
+
+    if($_POST['tipo_persona']){
+        $datos_persona['tipo_persona'] = $_POST['tipo_persona'];
+    }else{
+        $datos_persona['tipo_persona'] = 'RESCATISTA';
+    }
+    if($_POST['nombre']){
+        $datos_persona['nombre'] = $_POST['nombre'];
+    }else{
+        $datos_persona['nombre'] = ' ';
+    }
+    if($_POST['apellido_paterno']){
+        $datos_persona['apellido_paterno'] = $_POST['apellido_paterno'];
+    }else{
+        $datos_persona['apellido_paterno'] = 'X';
+    }
+    if($_POST['apellido_materno']){
+        $datos_persona['apellido_materno'] = $_POST['apellido_materno'];
+    }else{
+        $datos_persona['apellido_materno'] = 'X';
+    }
+    if($_POST['fecha_nacimiento']){
+        $datos_persona['fecha_nacimiento'] = $_POST['fecha_nacimiento'];
+    }else{
+        $datos_persona['fecha_nacimiento'] = '';
+    }
+    if($_POST['celular']){
+        $datos_persona['celular'] = $_POST['celular'];
+    }else{
+        $datos_persona['celular'] = ' ';
+    }
+    if($_POST['telefono']){
+        $datos_persona['telefono'] = $_POST['telefono'];
+    }else{
+        $datos_persona['telefono'] = ' ';
+    }
+    if($_POST['correo']){
+        $datos_persona['correo'] = $_POST['correo'];
+    }else{
+        $datos_persona['correo'] = 'hola@apa.com';
+    }
+    if($_POST['centro']){
+        $datos_persona['centro'] = $_POST['centro'];
+    }else{
+        $datos_persona['centro'] = 'CENTRO';
+    }
+
+    $datos_persona['id_domicilio'] = $id_domicilio;
+
+    $res_persona = postPersona($datos_persona);
+
 }
 ?>
 </body>
