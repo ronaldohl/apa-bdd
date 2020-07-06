@@ -62,3 +62,28 @@ function badgeReportes($reporte){
         return 'info';
     }
 }
+
+function badgeAdopciones($adopcion){
+    if($adopcion['tipo']== 'TEMPORAL' ){
+        return 'info';
+    }elseif($adopcion['tipo'] == 'DEFINITIVA'){
+        return 'success';
+    }
+}
+
+function badgePersona($persona){
+    if($persona['tipo_persona']=='ADOPTANTE'){
+        return 'primary';
+    }elseif($persona['tipo_persona']=='RESCATISTA'){
+        return 'info';
+    }
+}
+function badgeMascota($mascota){
+    if($mascota['estatus']=='ADOPCION-TEMPORAL'){
+        return 'info';
+    }elseif($mascota['estatus']=='ADOPCION-DEFINITIVA'){
+        return 'success';
+    }elseif($mascota['estatus']=='RESGUARDO-APA'){
+        return 'warning';
+    }
+}
