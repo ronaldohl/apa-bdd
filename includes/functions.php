@@ -32,3 +32,33 @@ function redirect($url)
         echo '</noscript>'; exit;
     }
 }
+
+function paraAdopcion($mascota){
+
+    if($mascota['estatus'] == 'RESGUARDO-APA'){
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+function esAdoptante ($persona){
+    if($persona['tipo_persona'] == 'ADOPTANTE' ){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function badgeReportes($reporte){
+    if($reporte['evaluacion_reporte']=='RESCATAR'){
+        return 'success';
+    }elseif($reporte['evaluacion_reporte']=='PENDIENTE'){
+        return 'warning';
+    }elseif($reporte['evaluacion_reporte']=='CANALIZAR'){
+        return 'primary';
+    }elseif($reporte['evaluacion_reporte']=='OTRO'){
+        return 'info';
+    }
+}
