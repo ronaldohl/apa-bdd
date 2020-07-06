@@ -65,7 +65,7 @@
                  <td>'.$persona['nombre'] .'</td>
                  <td>'.$persona['apellido_paterno'].' '.$persona['apellido_materno'].'</td>
                  <td>'.$persona['centro'] .'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$persona['tipo_persona'] .'</span> </td>
+                 <td class="" ><span class="label label-table label-'.badgePersona($persona).' text-center">'.$persona['tipo_persona'] .'</span> </td>
                  <td class="text-center">
                     <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-persona?id='.$persona['id_persona'] .'"; >
                             <i  class="fa fa-eye"></i>
