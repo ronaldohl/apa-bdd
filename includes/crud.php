@@ -631,7 +631,8 @@ function postAdopcion($datos){
                 title: "GRACIAS",
                 text: "SE REGISTRÓ TU ADOPCIÓN!",
                 type: "success"
-            }).then (()=>{               
+            }).then (()=>{
+                window.location.href = ("/amigosproanimal/pages/adopciones.php");               
             });
             </script>';
             write_file($ruta_write, "W $adopcion ROW 1 -"); 
@@ -1162,7 +1163,7 @@ function putAdopcion($datos){
                 text: "SE ACTUALIZO LA ADOPCIÓN!",
                 type: "success"
             }).then (()=>{
-                    
+                window.location.href = ("/amigosproanimal/pages/adopciones.php");
             });
             </script>';
             write_file($ruta_write, "W $adopcion ROW 1 -"); 
