@@ -57,7 +57,7 @@ $datos_adopciones = getAdopciones();
                  <td>'.$adopcion['fecha_adopcion'] .'</td>
                  <td>'.$adopcion['centro'].'</td>
                  <td>'.$adopcion['anotaciones'] .'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$adopcion['tipo'] .'</span> </td>
+                 <td class="" ><span class="label label-table label-'.badgeAdopciones($adopcion) .' text-center">'.$adopcion['tipo'] .'</span> </td>
                  <td class="text-center">
                     <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-adopcion?id='.$adopcion['id_adopcion'] .'"; >
                             <i  class="fa fa-eye"></i>
