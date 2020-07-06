@@ -1,2 +1,5 @@
 /amigosproanimal/config/*
 /config
+/config/
+config/*
+config/bd-config.php
