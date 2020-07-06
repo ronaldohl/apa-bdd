@@ -3,6 +3,9 @@ require_once('../loads.php');
       
 $datos_mascotas = getMascotas();
 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,17 +36,12 @@ $datos_mascotas = getMascotas();
                  <th>Especie</th>
                  <th data-hide="phone, tablet">Centro APA</th>
                  <th data-hide="phone, tablet">Estatus</th>
-                 <th data-sort-ignore="true" class="min-width">Opciones</th>
+                 <th data-sort-ignore="true" class="min-width">Opciones <small>(Ver,Editar, Borrar y Adoptar)</small></th>
              </tr>
          </thead>
          <div class="m-t-40">
              <div class="d-flex">
-                 <div class="mr-auto">
-                     <div class="form-group">
-                         <a id="demo-btn-addrow" href="/amigosproanimal/pages/nueva-mascota.php" class="btn btn-primary "><i class="fa fa-plus ml-2 mr-2" ></i> Nueva Mascota
-                        </a>
-                         <small>Registra una nueva Mascota.</small> </div>
-                 </div>
+                 
                  <div class="ml-auto">
                      <div class="form-group">
                          <i class="fa fa-search"></i>
@@ -70,8 +68,15 @@ $datos_mascotas = getMascotas();
                     <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?dato=mascota&id='.$mascota['id_mascota'] .'";>
                             <i class="fas fa-trash"></i>
                     </a> 
+                    '; ?>
+                    <?php if(paraAdopcion($mascota)): ?>
+                        <a class="btn btn-sm btn-warning mr-1 ml-1" href="/amigosproanimal/pages/adopcion-01?id_mascota=<?php echo $mascota['id_mascota']; ?>" >
+                            <i class="fas fa-hand-holding-heart"></i>
+                     </a> 
+                     <?php endif ?>
                  </td>
-             </tr>';
+             </tr>
+             <?php 
              }
              
              ?>
