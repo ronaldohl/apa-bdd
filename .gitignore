@@ -3,3 +3,4 @@
 /config/
 config/*
 config/bd-config.php
+config\
