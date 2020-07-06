@@ -7,6 +7,8 @@
     <?php
         include ('includes-head.php');
         require_once('../loads.php');
+        // session_start();
+        validarSesion();
         if(getPersonas()){
             $datos_personas = getPersonas();
         }

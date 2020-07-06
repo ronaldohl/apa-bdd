@@ -1,6 +1,7 @@
 <?php
 require_once('../loads.php');
-
+// // session_start();
+validarSesion();
 
 if(!$_GET['id']){
     redirect('rescates.php');
@@ -43,7 +44,10 @@ $id_rescatista = $datos_rescate['id_persona'];
 // echo '</pre>';
 $datos_mascota = $datos_mascotas[$datos_rescate['id_rescate']]; 
 
-
+//echo '<pre>';
+//print_r($datos_mascota);
+//echo '</pre>';
+//
 /**********Comprobación de POST  ************ */
 $url = 'rescates.php';
 

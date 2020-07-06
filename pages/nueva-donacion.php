@@ -1,7 +1,8 @@
 <?php
 require_once('../loads.php');
 
-
+// session_start();
+validarSesion();
 // echo '<pre>';
 // print_r($datos_rescatistas);
 // echo '</pre>';

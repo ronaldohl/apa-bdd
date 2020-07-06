@@ -1,23 +1,8 @@
 
 <?php
     require_once('loads.php');
-    session_start();
-
-    if(!isset($_SESSION['usuario'])){
-        //   echo 'NO SETEADA';
-        //   global $CENTRO;
-        //   print_r($CENTRO);
-        header('Location: ./pages/login.php');
-    }else{
-        // global $CENTRO;
-        // echo 'SET';
-        // echo 'session:';
-        // print_r($_SESSION);
-        // echo 'CENTRO:';
-        // print_r($CENTRO);
-       // header('Location: ./pages/error-404.php');
-      
-    }
+    
+   validarSesion();
 
 ?>
 <!DOCTYPE html>

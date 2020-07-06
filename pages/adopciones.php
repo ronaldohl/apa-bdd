@@ -1,6 +1,7 @@
 <?php 
 require_once('../loads.php');
-      
+//session_start();
+validarSesion();      
 $datos_adopciones = getAdopciones();
 
 ?>

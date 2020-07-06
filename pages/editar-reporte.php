@@ -1,5 +1,7 @@
 <?php
     require_once('../loads.php');
+    // session_start();
+    validarSesion();
     if(!$_GET){
         // echo 'No GET';
          header('Location: ../index.php');

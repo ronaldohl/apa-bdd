@@ -1,6 +1,7 @@
 <?php 
 require_once('../loads.php');
-      
+// session_start();
+validarSesion();      
 $datos_donaciones = getDonaciones();
 
 ?>
@@ -57,7 +58,7 @@ $datos_donaciones = getDonaciones();
                  <td>'.$donacion['fecha_donacion'] .'</td>
                  <td>'.$donacion['centro'].'</td>
                  <td>'.$donacion['nombre_donante'] .'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$donacion['tipo_donacion'] .'</span> </td>
+                 <td class="" ><span class="label label-table label-'.badgeDonacion($donacion).' text-center">'.$donacion['tipo_donacion'] .'</span> </td>
                  <td class="text-center">
                     <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-donacion?id='.$donacion['id_donacion'] .'"; >
                             <i  class="fa fa-eye"></i>

@@ -1,6 +1,7 @@
 <?php 
 require_once('../loads.php');
-      
+// session_start();
+validarSesion();      
 $datos_productos = getProductos();
 
 ?>
@@ -31,9 +32,9 @@ $datos_productos = getProductos();
              <tr>
                  <th data-sort-initial="true" data-toggle="true">Nombre</th>
                  <th>Tipo</th>
-                 <th data-hide="phone, tablet">Centro APA</th>
-                 <th data-hide="phone, tablet">Unidad</th>
+                 <th data-hide="phone, tablet">Unidad medida</th>
                  <th data-hide="phone, tablet">Cantidad</th>
+                 <th data-hide="phone, tablet">Centro APA</th>
                  <th data-sort-ignore="true" class="min-width">Opciones</th>
              </tr>
          </thead>
@@ -61,7 +62,7 @@ $datos_productos = getProductos();
                  <td>'.$producto['tipo'].'</td>
                  <td>'.$producto['unidad_medida'] .'</td>    
                  <td>'.$producto['cantidad'] .'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$producto['centro'] .'</span> </td>
+                 <td class="" ><span class="label label-table label-'.badgeProducto($producto).' text-center">'.$producto['centro'] .'</span> </td>
                  <td class="text-center">
                     <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-producto?id='.$producto['id_producto'] .'"; >
                             <i  class="fa fa-eye"></i>

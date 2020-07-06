@@ -1,6 +1,7 @@
 <?php
 require('../loads.php');
-
+// session_start();
+validarSesion();
 if(!$_GET['id_mascota']){
     redirect('mascotas.php');
 }

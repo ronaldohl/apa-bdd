@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar Sesión</title>
     
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="">
@@ -19,21 +19,21 @@
     <!-- You can change the theme colors from here -->
     <!-- <link href="/amigosproanimal/assets/css/colors/default-dark.css" id="theme" rel="stylesheet"> -->
 </head>
-<body> 
+<body > 
     <?php
     include('header.php');
     ?>  
-    <br>
-    <div class="container  bg-light-extra rounded m-auto">
+    
+    <div class="container-fluid  bg-light-extra rounded ">
       <div class="row justify-content-center">
-        <div class="col-xs-12 col-md-4 col-md-offset-4 rcorners1">
+        <div class="col-xs-12 col-md-4 col-md-offset-4    mr-3 ml-3">
           <!-- Margen superior (css personalizado )-->
 
           <!-- Estructura del formulario -->
-          <form class="form-group" action="validar-login.php" method="POST">
-            <div class="form-row">
+          <form class="form-group" class=""  action="validar-login.php" method="POST">
+            <div class="form-row m-3">
               <div class="col text-center">
-                <h1 class="mt-5 mb-5">BIENVENIDO</h1>
+                <h1 class="mt-5 mb-5 font-bold text-primary">BIENVENIDO</h1>
               </div>
             </div>
             <!-- Caja de texto para usuario -->
@@ -79,9 +79,9 @@
             <!-- Fin load -->
 
             <!-- boton #login para activar la funcion click y enviar el los datos mediante ajax -->
-            <div class="row float-right mt-3">   
-              <div class="col-xs-8 col-xs-offset-2">
-                <button type="submit" class="btn btn-success btn-block " name="button" id="login">Iniciar sesión</button>
+            <div class="row float-right mt-3 mb-5 ">   
+              <div class="col-xs-8 col-xs-offset-2 mr-3">
+                <button type="submit" class="btn btn-success btn-block mr-5 mt-3 " name="button" id="login">Iniciar sesión</button>
               </div>
             </div>
             
@@ -95,7 +95,7 @@
     
 <?php 
         include('includes-body.php');
-        // include('footer.php');
+        include('footer.php');
     ?>
 </body>
 </html>

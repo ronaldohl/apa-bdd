@@ -72,7 +72,7 @@
             write_file( BASE_PATH .'files/readbd.log', "R $table_usr ROW 1 ");
             $datos_usuario = getUsuario($id_res);
              $_SESSION['usuario']=$datos_usuario['nombre_usuario'];                
-              $_SESSION['centro']=$datos_usuario['centro'];
+             $_SESSION['centro']=$datos_usuario['centro'];
             
               redirect('/amigosproanimal/index.php');                
         }else{
