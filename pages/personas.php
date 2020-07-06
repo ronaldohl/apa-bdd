@@ -10,6 +10,16 @@
         if(getPersonas()){
             $datos_personas = getPersonas();
         }
+        if($_GET){   
+        if($_GET['adopcion'] && $_GET['id_mascota']){
+            $id_mascota = $_GET['id_mascota'];
+            $band_adopcion = true;
+        }
+    }else{
+        $id_mascota = 0;
+        $band_adopcion = false;
+    }
+
     ?>
 </head>
 <body class="">
@@ -63,11 +73,18 @@
                     <a class="btn btn-sm btn-info mr-1 ml-1"  href="/amigosproanimal/pages/editar-persona?id='.$persona['id_persona'] .'"; > 
                             <i class="fa fa-edit"></i>
                     </a>
-                    <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?id='.$persona['id_persona'] .'";>
+                    <a class="btn btn-sm btn-danger mr-1 ml-1" href="/amigosproanimal/pages/borrar?daoto=persona&id='.$persona['id_persona'] .'";>
                             <i class="fas fa-trash"></i>
-                    </a> 
+                    </a>
+                    '; ?>
+                    <?php if(esAdoptante($persona)&& $band_adopcion): ?>
+                        <a class="btn btn-sm btn-warning mr-1 ml-1" href="/amigosproanimal/pages/adopcion-02?persona=<?php echo $persona['id_persona']; ?>&id_mascota=<?php echo $id_mascota; ?>" >
+                            <i class="fas fa-hand-holding-heart"></i> Seleccionar
+                     </a> 
+                     <?php endif ?>
                  </td>
-             </tr>';
+             </tr>
+             <?php
              }
              
              ?>
