@@ -38,11 +38,13 @@
             <hr>
         </div>
     </div>
-    <form id=form class="form" accion="editar-reporte.php" method='POST'>
+    <form id=form class="form" accion="editar-reporte.php?<?php echo $datos_reporte['id_reporte']; ?>" method='POST'>
         <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputFecha4">Fecha</label>
-                    <input type="date" name='fecha_reporte' required class="form-control" id="inputFecha4" placeholder="Fecha de Reporte" value="<?php echo $datos_reporte['fecha_reporte']; ?>">
+                    <input type="date" name='fecha_reporte' required class="form-control" id="inputFecha4" 
+                    placeholder="Fecha de Reporte" value="<?php echo $datos_reporte['fecha_reporte']; ?>"
+                    >
                 </div>
                 <div class="form-group col-md-6">
                     <i class="fa fa-paw mr-2"></i><label class="" for="centroApa">Centro Apa</label>
@@ -66,12 +68,14 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputDetalles4"><i class="fas fa-pencil-alt mr-2" id="icon"></i>Detalles Tipo</label>
-                <input type="text" class="form-control" id="inputTipo4" name="detalles_tipo" placeholder="<?php echo $datos_reporte['detalles_tipo']; ?>" value="<?php echo $datos_reporte['detalles_tipo']; ?>" >                
+                <input type="text" class="form-control" id="inputTipo4" name="detalles_tipo" 
+                placeholder="<?php echo $datos_reporte['detalles_tipo']; ?>" value="<?php echo $datos_reporte['detalles_tipo']; ?>" >                
             </div>
         </div>
         <div class="form-group">
             <label for="inputDescripcion2"><i class="fas fa-info-circle mr-2" id="icon1"></i>Descripción</label>
-            <textarea class="form-control" required name="descripcion_reporte" id="inputDescricpion2" placeholder="<?php echo $datos_reporte['descripcion_reporte'];  ?>" value="<?php echo $datos_reporte['descripcion_reporte'];  ?>" ></textarea>
+            <textarea class="form-control" name="descripcion_reporte" id="inputDescricpion2" required
+             placeholder="<?php echo $datos_reporte['descripcion_reporte'];  ?>" value="<?php echo $datos_reporte['descripcion_reporte'];?>" ></textarea>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -153,9 +157,12 @@
         }elseif(!$_POST['centro']){
             redirect($url);
         }
+        $reporte_editado['descripcion_reporte'] = $datos_reporte['descripcion_reporte'];
         $reporte_editado['id_reporte']= $datos_reporte['id_reporte'];
         $reporte_editado['tipo_reporte'] = $_POST['tipo_reporte'];
-        $reporte_editado['descripcion_reporte'] = $_POST['descripcion_reporte'];
+        if($_POST['descripcion_reporte']){
+            $reporte_editado['descripcion_reporte'] = $_POST['descripcion_reporte'];
+        }
         $reporte_editado['evaluacion_reporte'] = $_POST['evaluacion_reporte'];
         $reporte_editado['fecha_reporte'] = $_POST['fecha_reporte'];
         $reporte_editado['centro'] = $_POST['centro'];
@@ -166,11 +173,14 @@
         if($_POST['detalles_evaluacion']){
             $reporte_editado['detalles_evaluacion'] = $_POST['detalles_evaluacion'];
         }
-        echo 'rep_editado';
-        print_r($reporte_editado);
+        if($_POST['descripcion_reporte']){
+            $reporte_editado['descripcion_reporte'] = $_POST['descripcion_reporte'];
+        }
+        //echo 'rep_editado';
+        //print_r($reporte_editado);
         // include ('includes-head.php');
         $res = putReporte($reporte_editado);
-        echo'despues de put';
+        //echo'despues de put';
         // if($res){
         //     print_r($res);
         // }
