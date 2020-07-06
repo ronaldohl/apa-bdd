@@ -57,7 +57,7 @@ $datos_mascotas = getMascotas();
                  <td>'.$mascota['nombre'] .'</td>
                  <td>'.$mascota['especie'].'</td>
                  <td>'.$mascota['centro'] .'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$mascota['estatus'] .'</span> </td>
+                 <td class="" ><span class="label label-table label-'.badgeMascota($mascota).' text-center">'.$mascota['estatus'] .'</span> </td>
                  <td class="text-center">
                     <a class="btn btn-sm btn-primary mr-1 ml-1 " href="/amigosproanimal/pages/ver-mascota?id='.$mascota['id_mascota'] .'"; >
                             <i  class="fa fa-eye"></i>
