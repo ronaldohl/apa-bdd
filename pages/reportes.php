@@ -49,12 +49,12 @@
          </div>
          <tbody>
              <?php
-             foreach ($datos_reportes as $reporte){
+             foreach ($datos_reportes as $reporte){                 
              echo '<tr>
                  <td>'.$reporte['fecha_reporte'].'</td>
                  <td>'.$reporte['tipo_reporte'].'</td>     
                  <td>'.$reporte['centro'].'</td>    
-                 <td class="" ><span class="label label-table label-success text-center">'.$reporte['evaluacion_reporte'].'</span> </td>
+                 <td class="" ><span class="label label-table label-'.badgeReportes($reporte).' text-center">'.$reporte['evaluacion_reporte'].'</span> </td>
                  <td class="text-center">
                     <a class="btn btn-sm btn-primary  " href="/amigosproanimal/pages/ver-reporte?id='.$reporte['id_reporte'].'"; >
                             <i  class="fa fa-eye"></i>
