@@ -1,6 +1,6 @@
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
+<link rel="icon" type="image/png" href="/amigosproanimal/assets/images/apa-icon.png">
 <!-- Vendor CSS Files -->
 <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 <!-- <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet"> -->
@@ -17,6 +17,7 @@
 <link href="/amigosproanimal/assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="/amigosproanimal/assets/css/style.css" rel="stylesheet">
+<link href="/amigosproanimal/assets/css/styles.css" rel="stylesheet">
 <!-- page css -->
 <link href="/amigosproanimal/assets/css/pages/error-pages.css" rel="stylesheet">
 <!-- You can change the theme colors from here -->

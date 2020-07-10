@@ -175,7 +175,9 @@ function getPersonas(){
     global $HOST;           
     $sql = "SELECT * FROM $persona WHERE activo = '1'";
     global $conexionbd;
+    // $datos[] = array();
     $res =   $conexionbd->query($sql);
+    // print_r($res);
     if($res->num_rows){            
         $i = 0;
         $bytes = 0;
@@ -183,6 +185,7 @@ function getPersonas(){
             $datos[$i] = ($row);
             $i++;
         }
+        // print_r($datos);
         write_file($ruta_read, "R $persona ROW $i "); 
     }else{
         echo '<script>

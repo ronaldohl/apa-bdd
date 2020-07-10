@@ -28,31 +28,25 @@
 <body> 
     <?php
     include('pages/header.php');
-    ?>  
-    
-
-
-           
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    ?>             
+                <div id="carouselExampleIndicators" class="carousel slide contenedor-carousel" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-
-
                     </ol>
-                    <div class="carousel-inner">
+                    <div class="carousel-inner contenedor-carousel">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="/amigosproanimal/assets/images/background/slider-apa-01.png" alt="First slide">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B;">Bienvenido</h1>
+                            <img class="w-100" src="/amigosproanimal/assets/images/background/slider-apa-01.png" alt="First slide">
+                            <div class="carousel-caption d-none d-md-block text-carousel">
+                                <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B; -webkit-text-stroke: 2px white;">Bienvenido</h1>
                                 <h3 class="text-dark">Conoce las diferentes acciones que puedes realizar en el sistema de gestión APA</h3>
                                 <a href="/amigosproanimal/pages/acciones.php" class="btn btn-lg btn-primary mt-3">Ir a Acciones <i class="fa fa-arrow-circle-o-right"></i></a>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img class="d-block w-100" src="/amigosproanimal/assets/images/background/slider-apa-02.png" alt="Second slide">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption d-none d-md-block text-carousel">
                                 <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B;">Personas</h1>
                                 <h3 class="text-dark">Gestiona los miembros de APA como rescatistas o adoptantes</h3>
                                 <a href="/amigosproanimal/pages/personas.php" class="btn btn-lg btn-primary mt-3">Ir a Personas <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -60,7 +54,7 @@
                         </div>
                         <div class="carousel-item">
                             <img class="d-block w-100" src="/amigosproanimal/assets/images/background/slider-apa-03.png" alt="Third slide">
-                            <div class="carousel-caption d-none d-md-block">
+                            <div class="carousel-caption d-none d-md-block text-carousel">
                                 <h1 class="morado-apa font-bold rounded mb-4" style="font-size: 80px; color:#80388B;">Mascotas</h1>
                                 <h3 class="text-dark">Conoce nuestras mascotas rescatadas y en adopción</h3>
                                 <a href="/amigosproanimal/pages/mascotas.php" class="btn btn-lg btn-primary mt-3">Ir a Mascotas <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -81,8 +75,8 @@
        
 
 <?php 
-        include('./pages/includes-body.php');
           include('./pages/footer.php');
+        include('./pages/includes-body.php');
     ?>
 </body>
 </html>

@@ -3,7 +3,7 @@
     // require("../incsludes/conexion.php");
     // require('C:\wamp64\www\amigosproanimal\config\config.php');
     // require_once( 'C:/wamp64/www/amigosproanimal/' . 'includes/crud.php');
-    session_start();
+    // // session_start();
     if(isset ($_POST) ){
         // print_r($_POST);
         $datos = $_POST;

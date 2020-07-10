@@ -26,3 +26,13 @@ th[sortable].desc:before {
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
 }
+
+.contenedor-carousel {
+    height: 80vh;
+}
+
+.text-carousel {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+}

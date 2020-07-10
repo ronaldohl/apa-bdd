@@ -2,4 +2,4 @@
 $HOST = 'MASTER';
 $CENTRO = 'NA';
 $ROLE = 'USER';
-/** c*/
+/** variables para usar */

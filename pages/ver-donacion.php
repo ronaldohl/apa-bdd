@@ -21,6 +21,7 @@ $datos_domicilio = getDomicilio($datos_donacion['id_domicilio']);
     <?php 
       include('includes-head.php')
     ?>
+   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Donacion</title>
 </head>
@@ -29,7 +30,7 @@ $datos_domicilio = getDomicilio($datos_donacion['id_domicilio']);
         include ('header.php');
         
     ?>
-<div class="container m-5">
+<div class="container m-5 printableArea " >
 <hr>
 <div class="row">
     <div class="col">
@@ -225,16 +226,23 @@ $datos_domicilio = getDomicilio($datos_donacion['id_domicilio']);
                                 </div>
                             </div>
                             <div class="form-row ">
+                                <div class="col">
+                                    <div class="text-left">
+                                        <button  type="button" id="print" class="btn btn-outline-info" >
+                                            <span><i class="fa fa-print mr-2 mt-"></i>Print</span>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div class="col ">
                                     <div class="text-right ">
                                         <a href="donaciones.php" class="mt-2 btn btn-info ml-5" value="Enviar"> <i class="fa fa-arrow-circle-left mr-2"></i>Regresar</a>
-                                    </div>
+                                    </div>                                    
                                 </div>
                             </div>
                     </form>
                 </div>
 
-
+                <?php include('includes-body.php'); ?>
 </body>
 </html>
 

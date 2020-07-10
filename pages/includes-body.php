@@ -20,4 +20,20 @@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
+    <script src="/amigosproanimal/js/jquery.PrintArea.js"></script>
+    <script >
+    
+    $(document).ready(function() {
+        $("#print").click(function() {
+            var mode = 'iframe'; //popup
+            var close = mode == "popup";
+            var options = {
+                mode: mode,
+                popClose: close
+            };
+            $("div.printableArea").printArea(options);
+        });
+    });
+    
+    </script>
     <script src="/amigosproanimal/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
